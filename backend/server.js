@@ -21,7 +21,7 @@ const app = express();
 connectDB();
 
 const corsOptions = {
-  origin: ['https://www.berylintlschl.com', 'https://berylintlschl.com'],
+  origin: ['https://www.bendonaldschools.com', 'https://bendonaldschools.com'],
   // origin: 'http://localhost:4000',
   credentials: true,
 };
