@@ -18,7 +18,7 @@ const Footer = () => {
         <div>
           <h2 className='text-xl font-bold mb-4'>Contact Details</h2>
           <p className='mb-2'>Phone: 07060511978, 09073091617</p>
-          <p className='mb-2'>Email: berylintlschl@gmail.com</p>
+          <p className='mb-2'>Email: Bendonaldintlschl@gmail.com</p>
           <p>
             Location: Plot 1, Block 1, Ikot Eneobong (Federal Housing Estate)
             Calabar Municipality, Cross River State
@@ -82,10 +82,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link
-                href='https://www.youtube.com/@berylinternationalschools9663'
-                className='flex items-center hover:underline'
-              >
+              <Link href='' className='flex items-center hover:underline'>
                 <FaYoutube className='inline-block mr-2 text-2xl' /> Youtube
               </Link>
             </li>
@@ -95,8 +92,8 @@ const Footer = () => {
 
       <div className='mt-8 border-t border-gray-700 pt-4 text-center'>
         <p className='text-gray-400'>
-          &copy; {currentYear} Beryl International Schools. Powered by Beryl
-          International Schools
+          &copy; {currentYear} Bendonald International Schools. Powered by
+          Bendonald International Schools
         </p>
       </div>
     </footer>

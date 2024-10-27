@@ -1,4 +1,4 @@
-import { FaPhone } from 'react-icons/fa';
+import { FaMailBulk, FaPhone } from 'react-icons/fa';
 import style from './styles/letterHead.module.css';
 
 const LetterHead = ({ image }) => {
@@ -7,7 +7,7 @@ const LetterHead = ({ image }) => {
       <main className={style.main}>
         <div className={style.logo}>
           <img
-            src='https://res.cloudinary.com/dzajrh9z7/image/upload/v1726781636/beryl/epfme50v5t4l66i6fzx3.jpg'
+            src='https://res.cloudinary.com/dzajrh9z7/image/upload/v1721855840/Bendonalds/m5eqmos5mf6tq1pg7lrg.jpg'
             alt='logo'
           />
         </div>
@@ -18,16 +18,18 @@ const LetterHead = ({ image }) => {
         )}
 
         <div className={style.mainHeader}>
-          <h1 className='md:text-4xl'>Beryl International School Calabar</h1>
+          <h1 className='md:text-4xl'>Bendonals International Schools</h1>
           <h4 className='text-pink-600'>
-            Plot 1, Block 1, Ikot Eneobong (Federal Housing Estate)
+            NO. 9 BY MTN MAST, ODUKPANI CLOSE, IKOT ENEOBONG
           </h4>
           <h4 className='text-pink-600'>
-            Calabar Municipality, Cross River State
+            F.H.E 8 MILES, CALABAR, C.R.S NIGERIA
           </h4>
           <p>
-            <FaPhone className='inline-block mb-1 text-green-500' />{' '}
-            07060511978, 09073091617
+            <FaMailBulk className='inline-block mb-1 mr-2 text-blue-900' />
+            bendonaldsschools@gmail.com{' '}
+            <FaPhone className='inline-block mb-1 mx-2 text-blue-900' />
+            TEL: 07038307768, 08169866808
           </p>
         </div>
       </main>
