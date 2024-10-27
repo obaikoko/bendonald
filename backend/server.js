@@ -21,7 +21,8 @@ const app = express();
 connectDB();
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ['https://www.berylintlschl.com', 'https://berylintlschl.com'],
+  // origin: 'http://localhost:4000',
   credentials: true,
 };
 
@@ -43,5 +44,5 @@ app.use('/api/nextTerm', nextTermRoute);
 app.use(notFound);
 app.use(errorHandler);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 app.listen(port, console.log(`Server started on port: ${port}`));
