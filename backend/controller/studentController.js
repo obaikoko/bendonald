@@ -116,7 +116,7 @@ const RegisterStudent = asyncHandler(async (req, res) => {
   });
 
   // Construct the registration number
-  const registrationNumber = `BIS/${currentYear}/${classCode}/${(
+  const registrationNumber = `BDIS/${currentYear}/${classCode}/${(
     studentCountInClass + 1
   )
     .toString()

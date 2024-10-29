@@ -77,7 +77,7 @@ const StudentResult = () => {
                   <strong> Account Details:</strong>
                 </p>{' '}
                 <small>
-                  ACCOUNT NAME: BERYL INTERNATIONAL SCHOOLS <br /> ACCOUNT
+                  ACCOUNT NAME: BENDONALD INTERNATIONAL SCHOOLS <br /> ACCOUNT
                   NUMBER: xxxxxxxxx <br /> BANK NAME: BANK NAME
                 </small>
               </div>

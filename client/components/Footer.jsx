@@ -18,7 +18,7 @@ const Footer = () => {
         <div>
           <h2 className='text-xl font-bold mb-4'>Contact Details</h2>
           <p className='mb-2'>Phone: 07060511978, 09073091617</p>
-          <p className='mb-2'>Email: Bendonaldintlschl@gmail.com</p>
+          <p className='mb-2'>Email: bendonaldsschools@gmail.com</p>
           <p>
             Location: Plot 1, Block 1, Ikot Eneobong (Federal Housing Estate)
             Calabar Municipality, Cross River State
