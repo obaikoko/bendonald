@@ -62,7 +62,6 @@ const createResult = asyncHandler(async (req, res) => {
       teacherRemark: '',
       principalRemark: '',
     });
-    
 
     if (result) {
       res.status(200).json(result);
@@ -84,16 +83,14 @@ const createResult = asyncHandler(async (req, res) => {
       averageScore: '',
       subjectResults: addSubjects,
       affectiveAssessment: [
+        { aCategory: 'Attendance' },
+        { aCategory: 'Carefulness' },
+        { aCategory: 'Responsibility' },
+        { aCategory: 'Honesty' },
         { aCategory: 'Neatness' },
         { aCategory: 'Obedience' },
-        { aCategory: 'Punctuality' },
         { aCategory: 'Politeness' },
-        { aCategory: 'Honesty' },
-        { aCategory: 'SelfControl' },
-        { aCategory: 'Socialbility' },
-        { aCategory: 'Leadership' },
-        { aCategory: 'Initiative' },
-        { aCategory: 'Responsibility' },
+        { aCategory: 'Punctuality' },
       ],
       psychomotor: [
         { pCategory: 'Handwriting' },
@@ -103,8 +100,6 @@ const createResult = asyncHandler(async (req, res) => {
         { pCategory: 'Music' },
         { pCategory: 'Craft' },
         { pCategory: 'ComputerPractice' },
-        { pCategory: 'WorkshopPractice' },
-        { pCategory: 'LabPractice' },
       ],
       teacherRemark: '',
       principalRemark: '',

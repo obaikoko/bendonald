@@ -39,9 +39,7 @@ const subjectResults = ({ level }) => {
       { subject: 'Creative Art' },
       { subject: 'French' },
       { subject: 'Home Economics' },
-      { subject: 'History' },
       { subject: 'Literature-In-English' },
-      { subject: 'Nigeria Language' },
       { subject: 'Social Studies' },
       { subject: 'Physical And Health Education' },
     ]);
@@ -54,25 +52,16 @@ const subjectResults = ({ level }) => {
   ) {
     return (subjectResults = [
       { subject: 'English' },
-      { subject: 'Phonetics/Spelling' },
       { subject: 'Mathematics' },
-      { subject: 'Computer Science(ICT)' },
-      { subject: 'Social Studies' },
-      { subject: 'Agricultural Science' },
+      { subject: 'Social Studies & Citizenship' },
       { subject: 'Basic Science' },
-      { subject: 'Basic Technology' },
-      { subject: 'Christian Religious Knowledge' },
-      { subject: 'Home Economics' },
       { subject: 'Physical And Health Education' },
+      { subject: 'Christian Religious Knowledge' },
       { subject: 'Civic Education' },
       { subject: 'Quantitative Reasoning' },
       { subject: 'Verbal Reasoning' },
-      { subject: 'Creative Composition' },
-      { subject: 'Music' },
-      { subject: 'Creative Art' },
-      { subject: 'French' },
-      { subject: 'Efik' },
-      { subject: 'History' },
+      { subject: 'Prevocational Studies' },
+      { subject: 'Spelling Bee' },
     ]);
   } else {
     return (subjectResults = [
