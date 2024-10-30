@@ -54,7 +54,7 @@ const Onboarding = () => {
           </h3>
           <p className='text-gray-600 text-center'>
             Complete the enrollment by submitting any required documents and
-            fees. We look forward to welcoming you into the Beryl International
+            fees. We look forward to welcoming you into the Bendonald International
             School family!
           </p>
         </div>

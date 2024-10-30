@@ -45,25 +45,33 @@ const AffectiveAssessment = ({ data }) => {
         </thead>
         <tbody>
           <tr>
-            <td>80 - 100</td>
+            <td>90 - 100</td>
+            <td>A+</td>
+          </tr>
+          <tr>
+            <td>80 - 90</td>
             <td>A</td>
           </tr>
 
+          <tr>
+            <td>80 - 89</td>
+            <td>B+</td>
+          </tr>
           <tr>
             <td>70 - 79</td>
             <td>B</td>
           </tr>
           <tr>
             <td>60 - 69</td>
-            <td>C</td>
+            <td>B</td>
           </tr>
           <tr>
             <td>50 - 59</td>
-            <td>D</td>
+            <td>C</td>
           </tr>
           <tr>
             <td>40 - 49</td>
-            <td>E</td>
+            <td>D</td>
           </tr>
           <tr>
             <td>0 - 39</td>

@@ -17,11 +17,11 @@ const Footer = () => {
         {/* Contact Details */}
         <div>
           <h2 className='text-xl font-bold mb-4'>Contact Details</h2>
-          <p className='mb-2'>Phone: 07060511978, 09073091617</p>
+          <p className='mb-2'>Phone: 07038307768, 08169866808</p>
           <p className='mb-2'>Email: bendonaldsschools@gmail.com</p>
           <p>
-            Location: Plot 1, Block 1, Ikot Eneobong (Federal Housing Estate)
-            Calabar Municipality, Cross River State
+            NO. 9 by MTN Mast, Odukpani Close, Ikot Eneobong F.H.E 8 Miles,
+            Calabar, C.R.S Nigeria
           </p>
         </div>
 

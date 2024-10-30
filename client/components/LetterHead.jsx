@@ -18,7 +18,7 @@ const LetterHead = ({ image }) => {
         )}
 
         <div className={style.mainHeader}>
-          <h1 className='md:text-4xl'>Bendonals International Schools</h1>
+          <h1 className='md:text-4xl'>Bendonalds International Schools</h1>
           <h4 className='text-pink-600'>
             NO. 9 BY MTN MAST, ODUKPANI CLOSE, IKOT ENEOBONG
           </h4>
@@ -29,7 +29,7 @@ const LetterHead = ({ image }) => {
             <FaMailBulk className='inline-block mb-1 mr-2 text-blue-900' />
             bendonaldsschools@gmail.com{' '}
             <FaPhone className='inline-block mb-1 mx-2 text-blue-900' />
-            TEL: 07038307768, 08169866808
+            07038307768, 08169866808
           </p>
         </div>
       </main>

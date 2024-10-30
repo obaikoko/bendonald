@@ -128,7 +128,8 @@ const StudentResult = () => {
                   </p>
                   <p className='text-sm'>
                     <strong>STUDENT'S TOTAL SCORE:</strong>
-                    {data?.totalScore} out of {data?.subjectResults?.length * 100}
+                    {data?.totalScore} out of{' '}
+                    {data?.subjectResults?.length * 100}
                   </p>
                 </div>
                 <div className={style.headerContent}>
@@ -160,8 +161,8 @@ const StudentResult = () => {
                 <strong> Account Details:</strong>
               </p>{' '}
               <small>
-                ACCOUNT NAME: BENDONALDS INTERNATIONAL SCHOOLS <br /> ACCOUNT NUMBER:
-                xxxxxxxxx <br /> BANK NAME: BANK NAME
+                ACCOUNT NAME: BENDONALDS INTERNATIONAL SCHOOLS <br /> ACCOUNT
+                NUMBER: 4091765229 <br /> BANK NAME: POLARIS
               </small>
             </div>
             <ReactToPrint

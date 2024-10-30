@@ -64,18 +64,18 @@ const ResultTable = ({ data }) => {
           <h3 className='text-lg font-bold'>Grading System</h3>
           <ul className='list-none space-y-1 text-sm'>
             <li>
+              <span className='font-semibold'>A+</span> - Excellent
               <span className='font-semibold'>A</span> - Excellent
-              <span className='font-semibold ml-4'>B</span> - Good
+              <span className='font-semibold ml-4'>B+</span> - Very Good
+              <span className='font-semibold ml-4'>B+</span> Good
             </li>
 
             <li>
-              <span className='font-semibold'>C</span> - Average
+              <span className='font-semibold'>C</span> - Credit
               <span className='font-semibold ml-4'>D</span> - Pass
             </li>
-
             <li>
-              <span className='font-semibold'>E</span> - Poor
-              <span className='font-semibold  ml-4'>F</span> - Very Poor
+              <span className='font-semibold  ml-4'>F</span> - Fail
             </li>
           </ul>
         </div>
