@@ -3,6 +3,9 @@ import React from 'react';
 
 const GalleryPage = () => {
   const images = [
+    { src: 'images/cert.jpg', title: 'Indepence Day Calabar' },
+    { src: 'images/graduants.jpg', title: '2023/2024 Graduating Learners' },
+    { src: 'images/graduants2.jpg', title: '2023/2024 Graduating Students' },
     { src: 'images/independence2.jpg', title: 'Indepence Day Calabar' },
     { src: 'images/independence3.jpg', title: 'Indepence Day Calabar' },
     { src: 'images/independence5.jpg', title: 'Indepence Day Calabar' },

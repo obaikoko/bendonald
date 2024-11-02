@@ -29,12 +29,10 @@ const StudentResult = () => {
     return <Spinner clip={true} size={150} />;
   }
   if (
-    data?.level === 'Creche' ||
-    data?.level === 'Day Care' ||
-    data?.level === 'Reception' ||
-    data?.level === 'Pre School' ||
-    data?.level === 'Pre KG' ||
-    data?.level === 'KG'
+    data?.level === 'Lower Reception' ||
+    data?.level === 'Upper Reception' ||
+    data?.level === 'Nursery 1' ||
+    data?.level === 'Nursery 2'
   ) {
     return (
       <div>

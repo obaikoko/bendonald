@@ -79,12 +79,10 @@ const UpdateResultScore = ({ level }) => {
             <h2 className='text-lg font-bold'>Update Scores</h2>
             <div className='flex flex-col '>
               <label htmlFor='subject'>Select Subject</label>
-              {level === 'Creche' ||
-              level === 'Day Care' ||
-              level === 'Reception' ||
-              level === 'Pre School' ||
-              level === 'Pre KG' ||
-              level === 'KG' ? (
+              {level === 'Lower Reception' ||
+              level === 'Upper Reception' ||
+              level === 'Nursery 1' ||
+              level === 'Nursery 2' ? (
                 <select
                   className='bg-gray-300 rounded px-4 py-1 '
                   name='subject'
@@ -204,9 +202,6 @@ const UpdateResultScore = ({ level }) => {
                   <option value='Further Mathematics'>
                     Further Mathematics
                   </option>
-                  <option value='Financial Accounting'>
-                    Financial Accounting
-                  </option>
 
                   <option value='Christian Religious Knowledge'>
                     Christian Religious Knowledge
@@ -220,22 +215,17 @@ const UpdateResultScore = ({ level }) => {
                   <option value='Government'>Government</option>
                   <option value='History'>History</option>
                   <option value='Commerce'>Commerce</option>
-                  <option value='French'>French</option>
-                  <option value='Tourism'>Tourism</option>
-                  <option value='Food And Nutrition'>Food And Nutrition</option>
-                  <option value='Visual Art'>Visual Art</option>
+                  <option value='Technical Drawing'>Technical Drawing</option>
                   <option value='Literature-In-English'>
                     Literature-In-English
                   </option>
                 </select>
               )}
             </div>
-            {level === 'Creche' ||
-            level === 'Day Care' ||
-            level === 'Reception' ||
-            level === 'Pre School' ||
-            level === 'Pre KG' ||
-            level === 'KG' ? (
+            {level === 'Lower Reception' ||
+            level === 'Upper Reception' ||
+            level === 'Nursery 1' ||
+            level === 'Nursery 2' ? (
               <>
                 <select
                   className='bg-gray-300 rounded px-4 py-1 '
