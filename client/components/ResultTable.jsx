@@ -7,12 +7,10 @@ const ResultTable = ({ data }) => {
   const { data: nextTerm } = useGetNextTermInfoQuery(level);
 
   if (
-    data.level === 'Creche' ||
-    data.level === 'Day Care' ||
-    data.level === 'Reception' ||
-    data.level === 'Pre School' ||
-    data.level === 'Pre KG' ||
-    data.level === 'KG'
+    data.level === 'Lower Reception' ||
+    data.level === 'Upper Reception' ||
+    data.level === 'Nursery 1' ||
+    data.level === 'Nursery 2'
   ) {
     return (
       <div className='p-6  bg-white rounded-xl shadow-md space-y-4'>
@@ -121,9 +119,15 @@ const ResultTable = ({ data }) => {
               <td>
                 RE-OPENING DATE: {nextTerm?.reOpeningDate.substring(0, 10)}
               </td>
-              <td>NEXT TERM'S FEE: &#8358;{nextTerm?.nextTermFee}</td>
-              <td>BUS FARE (Optional): &#8358;{nextTerm?.busFee}</td>
-              <td>OTHER CHARGES: &#8358;{nextTerm?.otherCharges}</td>
+              <td>
+                NEXT TERM'S FEE: &#8358;{nextTerm?.nextTermFee.toLocaleString()}
+              </td>
+              <td>
+                BUS FARE (Optional): &#8358;{nextTerm?.busFee.toLocaleString()}
+              </td>
+              <td>
+                OTHER CHARGES: &#8358;{nextTerm?.otherCharges.toLocaleString()}
+              </td>
             </tr>
           </tbody>
         </table>

@@ -7,7 +7,6 @@ import {
   useGetStudentsDataQuery,
   useGetStaffDataQuery,
 } from '@/src/features/data/dataApiSlice';
-import { useGraduateStudentsMutation } from '@/src/features/students/studentApiSlice';
 import Spinner from '@/components/Spinner';
 import UpdateEvent from '@/components/UpdateEvent';
 import GeneratePositions from '@/components/GeneratePositions';
@@ -18,7 +17,7 @@ import SecondaryData from '@/components/SecondaryData';
 import GradeData from '@/components/GradeData';
 
 import MailSender from '@/components/MailSender';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import PrePrimaryData from '@/components/PrePrimaryData';
 import Link from 'next/link';

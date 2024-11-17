@@ -30,54 +30,42 @@ const studentsData = asyncHandler(async (req, res) => {
     (student) => student.gender === 'Male'
   );
 
-  // Creche  Male Students
-  const crecheMaleStudents = allStudent.filter(
-    (student) => student.level === 'Creche' && student.gender === 'Male'
+  // Lower Reception male Students
+  const lowerReceptionMale = allStudent.filter(
+    (student) => student.level === 'Lower Recption' && student.gender === 'Male'
   );
-  // Creche Female Students
-  const crecheFemaleStudents = allStudent.filter(
-    (student) => student.level === 'Creche' && student.gender === 'Female'
+  // Lower Recption Female Students
+  const lowerReceptionFemale = allStudent.filter(
+    (student) =>
+      student.level === 'Lower Recption' && student.gender === 'Female'
   );
-  // Day Care  Male Students
-  const dayCareMaleStudents = allStudent.filter(
-    (student) => student.level === 'Day Care' && student.gender === 'Male'
+  //  Upper Reception Male Students
+  const upperReceptionMale = allStudent.filter(
+    (student) =>
+      student.level === 'Upper Reception' && student.gender === 'Male'
   );
-  // Day Care Female Students
-  const dayCareFemaleStudents = allStudent.filter(
-    (student) => student.level === 'Day Care' && student.gender === 'Female'
+  //  Upper Reception Female Students
+  const upperReceptionFemale = allStudent.filter(
+    (student) =>
+      student.level === 'Upper Reception' && student.gender === 'Female'
   );
-  // Reception Male Students
-  const receptionMaleStudents = allStudent.filter(
-    (student) => student.level === 'Reception' && student.gender === 'Male'
+  // Nursery 1 Male Students
+  const nursery1Male = allStudent.filter(
+    (student) => student.level === 'Nursery 1' && student.gender === 'Male'
   );
-  // Reception Female Students
-  const receptionFemaleStudents = allStudent.filter(
-    (student) => student.level === 'Reception' && student.gender === 'Female'
+  // Nursery 1 Female Students
+  const nursery1Female = allStudent.filter(
+    (student) => student.level === 'Nursery 1' && student.gender === 'Female'
   );
-  // Pre School Male Students
-  const preSchoolMaleStudents = allStudent.filter(
-    (student) => student.level === 'Pre School' && student.gender === 'Male'
+  // Nursery 2 Male Students
+  const nursery2Male = allStudent.filter(
+    (student) => student.level === 'Nursery 2' && student.gender === 'Male'
   );
-  // Pre School Female Students
-  const preSchoolFemaleStudents = allStudent.filter(
-    (student) => student.level === 'Pre School' && student.gender === 'Female'
+  // Nursery 2 Female Students
+  const nursery2Female = allStudent.filter(
+    (student) => student.level === 'Nursery 2' && student.gender === 'Female'
   );
-  // Pre Kg Male Students
-  const preKgMaleStudents = allStudent.filter(
-    (student) => student.level === 'Pre KG' && student.gender === 'Male'
-  );
-  // Pre Kg Female Students
-  const preKgFemaleStudents = allStudent.filter(
-    (student) => student.level === 'Pre KG' && student.gender === 'Female'
-  );
-  //  Kg Male Students
-  const KgMaleStudents = allStudent.filter(
-    (student) => student.level === 'KG' && student.gender === 'Male'
-  );
-  //  Kg Female Students
-  const KgFemaleStudents = allStudent.filter(
-    (student) => student.level === 'KG' && student.gender === 'Female'
-  );
+
   // Grade 1 Male Students
   const grade1MaleStudents = allStudent.filter(
     (student) => student.level === 'Grade 1' && student.gender === 'Male'
@@ -192,18 +180,14 @@ const studentsData = asyncHandler(async (req, res) => {
   res.json({
     females: femaleStudents.length,
     males: maleStudents.length,
-    crecheMales: crecheMaleStudents.length,
-    crecheFemales: crecheFemaleStudents.length,
-    dayCareMales: dayCareMaleStudents.length,
-    dayCareFemale: dayCareFemaleStudents.length,
-    receptionMales: receptionMaleStudents.length,
-    receptionFemale: receptionFemaleStudents.length,
-    preSchoolMales: preSchoolMaleStudents.length,
-    preSchoolFemale: preSchoolFemaleStudents.length,
-    preKgMales: preKgMaleStudents.length,
-    preKgFemale: preKgFemaleStudents.length,
-    KgMales: KgMaleStudents.length,
-    KgFemale: KgFemaleStudents.length,
+    lowerReceptionMales: lowerReceptionMale.length,
+    lowerReceptionFemales: lowerReceptionFemale.length,
+    upperReceptionMales: upperReceptionMale.length,
+    upperReceptionFemales: upperReceptionFemale.length,
+    nursery1Males: nursery1Male.length,
+    nursery1Females: nursery1Female.length,
+    nursery2Males: nursery2Male.length,
+    nursery2Females: nursery2Female.length,
     grade1Males: grade1MaleStudents.length,
     grade1Females: grade1FemaleStudents.length,
     grade2Males: grade2MaleStudents.length,

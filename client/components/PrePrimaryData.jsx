@@ -14,34 +14,24 @@ const PrePrimaryData = ({ data }) => {
         </thead>
         <tbody>
           <tr className='border-b'>
-            <td className='p-3'>Creche</td>
-            <td className='p-3'>{data.crecheMales}</td>
-            <td className='p-3'>{data.crecheFemales}</td>
+            <td className='p-3'>Lower Reception</td>
+            <td className='p-3'>{data.lowerReceptionMales}</td>
+            <td className='p-3'>{data.lowerReceptionFemales}</td>
           </tr>
           <tr className='border-b'>
-            <td className='p-3'>Day Care</td>
-            <td className='p-3'>{data.dayCareMales}</td>
-            <td className='p-3'>{data.dayCareFemale}</td>
+            <td className='p-3'>Upper Reception</td>
+            <td className='p-3'>{data.upperReceptionMales}</td>
+            <td className='p-3'>{data.upperReceptionFemales}</td>
           </tr>
           <tr className='border-b'>
-            <td className='p-3'>Reception</td>
-            <td className='p-3'>{data.receptionMales}</td>
-            <td className='p-3'>{data.receptionFemale}</td>
+            <td className='p-3'>Nursery 1</td>
+            <td className='p-3'>{data.nursery1Males}</td>
+            <td className='p-3'>{data.nursery1Females}</td>
           </tr>
           <tr className='border-b'>
-            <td className='p-3'>Pre School</td>
-            <td className='p-3'>{data.preSchoolMales}</td>
-            <td className='p-3'>{data.preSchoolFemale}</td>
-          </tr>
-          <tr className='border-b'>
-            <td className='p-3'>Pre kG</td>
-            <td className='p-3'>{data.preKgMales}</td>
-            <td className='p-3'>{data.preKgFemale}</td>
-          </tr>
-          <tr className='border-b'>
-            <td className='p-3'>kG</td>
-            <td className='p-3'>{data.KgMales}</td>
-            <td className='p-3'>{data.KgFemale}</td>
+            <td className='p-3'>Nursery 2</td>
+            <td className='p-3'>{data.nursery2Males}</td>
+            <td className='p-3'>{data.nursery2Females}</td>
           </tr>
         </tbody>
       </table>

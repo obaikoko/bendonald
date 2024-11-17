@@ -84,12 +84,10 @@ const RegisterStudent = asyncHandler(async (req, res) => {
 
   // Class level to code mapping
   const classCodeMapping = {
-    Creche: 'CR',
-    'Day Care': 'DC',
-    Reception: 'RP',
-    'Pre School': 'PS',
-    'Pre KG': 'PKG',
-    KG: 'KG',
+    'Lower Reception': 'LR',
+    'Upper Reception': 'UR',
+    'Nursery 1': 'N1',
+    'Nursery 2': 'N2',
     'Grade 1': 'G1',
     'Grade 2': 'G2',
     'Grade 3': 'G3',
@@ -403,7 +401,6 @@ const deleteStudent = asyncHandler(async (req, res) => {
 // @privacy Public
 const forgetPassword = asyncHandler(async (req, res) => {
   const { studentId } = req.body;
-  
 
   // Find user by email
   const student = await Student.findOne({ studentId });
