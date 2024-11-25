@@ -40,6 +40,10 @@ const SearchResultsBox = () => {
             onChange={(e) => setLevel(e.target.value)}
           >
             <option value='All'>All</option>
+            <option value='Lower Reception'>Lower Reception</option>
+            <option value='Upper Reception'>Upper Reception</option>
+            <option value='Nursery 1'>Nursery 1</option>
+            <option value='Nursery 2'>Nursery 2</option>
             <option value='Grade 1'>Grade 1</option>
             <option value='Grade 2'>Grade 2</option>
             <option value='Grade 3'>Grade 3</option>

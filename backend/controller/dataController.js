@@ -32,12 +32,12 @@ const studentsData = asyncHandler(async (req, res) => {
 
   // Lower Reception male Students
   const lowerReceptionMale = allStudent.filter(
-    (student) => student.level === 'Lower Recption' && student.gender === 'Male'
+    (student) => student.level === 'Lower Reception' && student.gender === 'Male'
   );
   // Lower Recption Female Students
   const lowerReceptionFemale = allStudent.filter(
     (student) =>
-      student.level === 'Lower Recption' && student.gender === 'Female'
+      student.level === 'Lower Reception' && student.gender === 'Female'
   );
   //  Upper Reception Male Students
   const upperReceptionMale = allStudent.filter(

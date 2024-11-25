@@ -293,7 +293,6 @@ const updateStudent = asyncHandler(async (req, res) => {
     sponsorPhoneNumber,
     sponsorEmail,
     image,
-
     fees,
   } = req.body;
 
