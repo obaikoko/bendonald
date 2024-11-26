@@ -815,7 +815,7 @@ const addStudent = () => {
       addOption(localGvtSelect, 'Saki East');
       addOption(localGvtSelect, 'Saki West');
       addOption(localGvtSelect, 'Surulere');
-    } else if (selectedState === 'Platue') {
+    } else if (selectedState === 'Plateau') {
       addOption(localGvtSelect, '');
       addOption(localGvtSelect, 'Barkin Ladi');
       addOption(localGvtSelect, 'Bassa');
