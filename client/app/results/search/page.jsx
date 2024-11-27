@@ -20,7 +20,7 @@ const ResultSearchPage = () => {
   const [studentClass, setStudentClass] = useState('All');
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const { data, isLoading, isError } = useSearchResultsQuery({
+  const { data, isLoading, isError } = useSearchResultsQuery( {
     keyword: name,
     level: studentClass,
   });

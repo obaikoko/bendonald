@@ -6,12 +6,7 @@ const ResultTable = ({ data }) => {
   const level = `?level=${data.level}`;
   const { data: nextTerm } = useGetNextTermInfoQuery(level);
 
-  if (
-    data.level === 'Lower Reception' ||
-    data.level === 'Upper Reception' ||
-    data.level === 'Nursery 1' ||
-    data.level === 'Nursery 2'
-  ) {
+  if (data.level === 'Lower Reception' || data.level === 'Upper Reception') {
     return (
       <div className='p-6  bg-white rounded-xl shadow-md space-y-4'>
         <p className='text-xl font-bold text-center'>

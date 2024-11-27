@@ -79,10 +79,7 @@ const UpdateResultScore = ({ level }) => {
             <h2 className='text-lg font-bold'>Update Scores</h2>
             <div className='flex flex-col '>
               <label htmlFor='subject'>Select Subject</label>
-              {level === 'Lower Reception' ||
-              level === 'Upper Reception' ||
-              level === 'Nursery 1' ||
-              level === 'Nursery 2' ? (
+              {level === 'Lower Reception' || level === 'Upper Reception' ? (
                 <select
                   className='bg-gray-300 rounded px-4 py-1 '
                   name='subject'
@@ -117,7 +114,9 @@ const UpdateResultScore = ({ level }) => {
                 level === 'Grade 2' ||
                 level === 'Grade 3' ||
                 level === 'Grade 4' ||
-                level === 'Grade 5' ? (
+                level === 'Grade 5' ||
+                'Nursery 1' ||
+                'Nursery 2' ? (
                 <select
                   className='bg-gray-300 rounded px-4 py-1 '
                   name='subject'
@@ -138,6 +137,9 @@ const UpdateResultScore = ({ level }) => {
                     Christian Religious Knowledge
                   </option>
                   <option value='Civic Education'>Civic Education</option>
+                  <option value='Computer Science(ICT)'>
+                    Computer Science(ICT)
+                  </option>
                   <option value='Quantitative Reasoning'>
                     Quantitative Reasoning
                   </option>
@@ -222,10 +224,7 @@ const UpdateResultScore = ({ level }) => {
                 </select>
               )}
             </div>
-            {level === 'Lower Reception' ||
-            level === 'Upper Reception' ||
-            level === 'Nursery 1' ||
-            level === 'Nursery 2' ? (
+            {level === 'Lower Reception' || level === 'Upper Reception' ? (
               <>
                 <select
                   className='bg-gray-300 rounded px-4 py-1 '

@@ -5,6 +5,7 @@ import getGrade from '../utils/getGrade.js';
 import getOrdinalSuffix from '../utils/getOrdinalSuffix.js';
 import subjectResults from '../utils/subjectResults.js';
 
+
 // @ GENERATE RESULT
 // @route POST api/results
 // @privacy Private
@@ -39,14 +40,7 @@ const createResult = asyncHandler(async (req, res) => {
   }
   const addSubjects = subjectResults({ level });
 
-  if (
-    level === 'Creche' ||
-    level === 'Day Care' ||
-    level === 'Reception' ||
-    level === 'Pre School' ||
-    level === 'Pre KG' ||
-    level === 'KG'
-  ) {
+  if (level === 'Lower Reception' || level === 'Upper Reception') {
     const result = await Result.create({
       user: req.user._id,
       studentId: id,
@@ -141,7 +135,7 @@ const getResults = asyncHandler(async (req, res) => {
     query = { ...query, level: req.user.level, subLevel: req.user.subLevel };
   }
 
-  const pageSize = 20;
+  const pageSize = 30;
   const page = Number(req.query.pageNumber) || 1;
   const count = await Result.countDocuments(query);
   const result = await Result.find(query)
