@@ -216,18 +216,14 @@ const updateResult = asyncHandler(async (req, res) => {
         throw new Error('Subject not found in results');
       }
       if (
-        result.level === 'Creche' ||
-        result.level === 'Day Care' ||
-        result.level === 'Reception' ||
-        result.level === 'Pre School' ||
-        result.level === 'Pre KG' ||
-        result.level === 'KG'
+        result.level === 'Lower Reception' ||
+        result.level === 'Upper Reception' 
       ) {
         const newGrade = (subjectResult.grade = grade || subjectResult.grade);
       } else {
         const newTestScore = (subjectResult.testScore =
           testScore || subjectResult.testScore);
-        const newExamScore = (subjectResult.examScore =
+        const newExamScore = (subjectResult.examScore = 
           examScore || subjectResult.examScore);
         subjectResult.totalScore = newTestScore + newExamScore;
         subjectResult.grade = getGrade(subjectResult.totalScore);
