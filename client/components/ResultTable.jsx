@@ -112,16 +112,16 @@ const ResultTable = ({ data }) => {
             </tr>
             <tr>
               <td>
-                RE-OPENING DATE: {nextTerm?.reOpeningDate.substring(0, 10)}
+                RE-OPENING DATE: {nextTerm?.reOpeningDate?.substring(0, 10)}
               </td>
               <td>
-                NEXT TERM'S FEE: &#8358;{nextTerm?.nextTermFee.toLocaleString()}
+                NEXT TERM'S FEE: &#8358;{nextTerm?.nextTermFee?.toLocaleString()}
               </td>
               <td>
-                BUS FARE (Optional): &#8358;{nextTerm?.busFee.toLocaleString()}
+                BUS FARE (Optional): &#8358;{nextTerm?.busFee?.toLocaleString()}
               </td>
               <td>
-                OTHER CHARGES: &#8358;{nextTerm?.otherCharges.toLocaleString()}
+                OTHER CHARGES: &#8358;{nextTerm?.otherCharges?.toLocaleString()}
               </td>
             </tr>
           </tbody>

@@ -5,7 +5,6 @@ import getGrade from '../utils/getGrade.js';
 import getOrdinalSuffix from '../utils/getOrdinalSuffix.js';
 import subjectResults from '../utils/subjectResults.js';
 
-
 // @ GENERATE RESULT
 // @route POST api/results
 // @privacy Private
@@ -139,7 +138,7 @@ const getResults = asyncHandler(async (req, res) => {
   const page = Number(req.query.pageNumber) || 1;
   const count = await Result.countDocuments(query);
   const result = await Result.find(query)
-    .sort({ createdAt: -1 })
+
     .limit(pageSize)
     .skip(pageSize * (page - 1));
 
@@ -217,13 +216,13 @@ const updateResult = asyncHandler(async (req, res) => {
       }
       if (
         result.level === 'Lower Reception' ||
-        result.level === 'Upper Reception' 
+        result.level === 'Upper Reception'
       ) {
         const newGrade = (subjectResult.grade = grade || subjectResult.grade);
       } else {
         const newTestScore = (subjectResult.testScore =
           testScore || subjectResult.testScore);
-        const newExamScore = (subjectResult.examScore = 
+        const newExamScore = (subjectResult.examScore =
           examScore || subjectResult.examScore);
         subjectResult.totalScore = newTestScore + newExamScore;
         subjectResult.grade = getGrade(subjectResult.totalScore);
