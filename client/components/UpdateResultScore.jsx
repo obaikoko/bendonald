@@ -110,13 +110,7 @@ const UpdateResultScore = ({ level }) => {
                   <option value='Singing'>Singing</option>
                   <option value='Games'>Games</option>
                 </select>
-              ) : level === 'Grade 1' ||
-                level === 'Grade 2' ||
-                level === 'Grade 3' ||
-                level === 'Grade 4' ||
-                level === 'Grade 5' ||
-                'Nursery 1' ||
-                'Nursery 2' ? (
+              ) : level === 'Nursery 1' ? (
                 <select
                   className='bg-gray-300 rounded px-4 py-1 '
                   name='subject'
@@ -126,8 +120,57 @@ const UpdateResultScore = ({ level }) => {
                   <option value=''>Enter Result Score</option>
                   <option value='English'>English</option>
                   <option value='Mathematics'>Mathematics</option>
-                  <option value='Social Studies & Citizenship'>
-                    Social Studies & Citizenship
+                  <option value='Social Studies'>Social Studies</option>
+                  <option value='Basic Science'>Basic Science</option>
+                  <option value='Physical And Health Education'>
+                    Physical And Health Education
+                  </option>
+                  <option value='Christian Religious Knowledge'>
+                    Christian Religious Knowledge
+                  </option>
+                  <option value='Creative Art'>Creative Art</option>
+                  <option value='Calligraphy'>Calligraphy</option>
+                  <option value='Jolly Phonics'>Jolly Phonics</option>
+                </select>
+              ) : level === 'Nursery 2' ? (
+                <select
+                  className='bg-gray-300 rounded px-4 py-1 '
+                  name='subject'
+                  id='subject'
+                  onChange={onChange}
+                >
+                  <option value=''>Enter Result Score</option>
+                  <option value='English'>English</option>
+                  <option value='Mathematics'>Mathematics</option>
+                  <option value='Social Studies'>Social Studies</option>
+                  <option value='Basic Science'>Basic Science</option>
+                  <option value='Physical And Health Education'>
+                    Physical And Health Education
+                  </option>
+                  <option value='Christian Religious Knowledge'>
+                    Christian Religious Knowledge
+                  </option>
+                  <option value='Computer Science(ICT)'>Computer Science(ICT)</option>
+                  <option value='Prevocational Studies'>Prevocational Studies</option>
+                  <option value='Calligraphy'>Calligraphy</option>
+                  <option value='Jolly Phonics'>Jolly Phonics</option>
+                </select>
+              ) : level === 'Grade 1' ||
+                level === 'Grade 2' ||
+                level === 'Grade 3' ||
+                level === 'Grade 4' ||
+                level === 'Grade 5' ? (
+                <select
+                  className='bg-gray-300 rounded px-4 py-1 '
+                  name='subject'
+                  id='subject'
+                  onChange={onChange}
+                >
+                  <option value=''>Enter Result Score</option>
+                  <option value='English'>English</option>
+                  <option value='Mathematics'>Mathematics</option>
+                  <option value='Social Studies'>
+                    Social Studies
                   </option>
                   <option value='Basic Science'>Basic Science</option>
                   <option value='Physical And Health Education'>

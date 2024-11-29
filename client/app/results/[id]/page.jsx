@@ -30,9 +30,7 @@ const StudentResult = () => {
   }
   if (
     data?.level === 'Lower Reception' ||
-    data?.level === 'Upper Reception' ||
-    data?.level === 'Nursery 1' ||
-    data?.level === 'Nursery 2'
+    data?.level === 'Upper Reception' 
   ) {
     return (
       <div>
@@ -75,8 +73,8 @@ const StudentResult = () => {
                   <strong> Account Details:</strong>
                 </p>{' '}
                 <small>
-                  ACCOUNT NAME: BENDONALD INTERNATIONAL SCHOOLS <br /> ACCOUNT
-                  NUMBER: xxxxxxxxx <br /> BANK NAME: BANK NAME
+                  ACCOUNT NAME: BENDONALDS INTERNATIONAL SCHOOLS <br /> ACCOUNT
+                  NUMBER: 4091765229 <br /> BANK NAME: POLARIS
                 </small>
               </div>
               <ReactToPrint

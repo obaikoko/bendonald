@@ -19,10 +19,10 @@ const LetterHead = ({ image }) => {
 
         <div className={style.mainHeader}>
           <h1 className='md:text-4xl'>Bendonalds International Schools</h1>
-          <h4 className='text-pink-600'>
+          <h4 className='text-red-700'>
             NO. 9 BY MTN MAST, ODUKPANI CLOSE, IKOT ENEOBONG
           </h4>
-          <h4 className='text-pink-600'>
+          <h4 className='text-red-700'>
             F.H.E 8 MILES, CALABAR, C.R.S NIGERIA
           </h4>
           <p>
