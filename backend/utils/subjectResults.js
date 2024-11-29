@@ -49,7 +49,7 @@ const subjectResults = ({ level }) => {
     return (subjectResults = [
       { subject: 'English' },
       { subject: 'Mathematics' },
-      { subject: 'Social Studies & Citizenship' },
+      { subject: 'Social Studies' },
       { subject: 'Basic Science' },
       { subject: 'Physical And Health Education' },
       { subject: 'Christian Religious Knowledge' },
