@@ -22,17 +22,6 @@ const UpdatePsychomotor = () => {
     LabPractice: '',
   });
 
-  const {
-    Sport,
-    Drawing,
-    Handwriting,
-    Speaking,
-    Craft,
-    Music,
-    ComputerPractice,
-    WorkshopPractice,
-    LabPractice,
-  } = formData;
   const { data, refetch } = useGetResultQuery(resultId);
   const [result, { isLoading }] = useUpdateResultMutation();
 
@@ -52,15 +41,13 @@ const UpdatePsychomotor = () => {
 
     // Create an array of affective assessments from formData
     const psychomotorAssessments = [
-      { pCategory: 'Sport', grade: formData.Sport },
-      { pCategory: 'Drawing', grade: formData.Drawing },
-      { pCategory: 'Music', grade: formData.Music },
       { pCategory: 'Handwriting', grade: formData.Handwriting },
+      { pCategory: 'Drawing', grade: formData.Drawing },
+      { pCategory: 'Sport', grade: formData.Sport },
       { pCategory: 'Speaking', grade: formData.Speaking },
+      { pCategory: 'Music', grade: formData.Music },
       { pCategory: 'Craft', grade: formData.Craft },
       { pCategory: 'ComputerPractice', grade: formData.ComputerPractice },
-      { pCategory: 'WorkshopPractice', grade: formData.WorkshopPractice },
-      { pCategory: 'LabPractice', grade: formData.LabPractice },
     ].filter((assessment) => assessment.grade); // Filter out any empty values
 
     try {
@@ -105,15 +92,13 @@ const UpdatePsychomotor = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
               {[
-                'Sport',
-                'Drawing',
                 'Handwriting',
+                'Drawing',
+                'Sport',
                 'Speaking',
-                'Craft',
                 'Music',
+                'Craft',
                 'ComputerPractice',
-                'WorkshopPractice',
-                'LabPractice',
               ].map((category) => (
                 <div key={category}>
                   <h3 className='font-medium'>{category}</h3>

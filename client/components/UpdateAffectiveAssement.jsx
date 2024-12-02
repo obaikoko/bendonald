@@ -11,30 +11,16 @@ const UpdateAffectiveAssement = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [resultId, setResultId] = useState(null);
   const [formData, setFormData] = useState({
+    Attendance: '',
+    Carefulness: '',
+    Responsibility: '',
+    Honesty: '',
     Neatness: '',
     Obedience: '',
-    Punctuality: '',
     Politeness: '',
-    Honesty: '',
-    SelfControl: '',
-    Socialbility: '',
-    Leadership: '',
-    Initiative: '',
-    Responsibility: '',
+    Punctuality: '',
   });
 
-  const {
-    Neatness,
-    Obedience,
-    Punctuality,
-    Politeness,
-    Honesty,
-    SelfControl,
-    Socialbility,
-    Leadership,
-    Initiative,
-    Responsibility,
-  } = formData;
   const { data, refetch } = useGetResultQuery(resultId);
   const [result, { isLoading }] = useUpdateResultMutation();
 
@@ -54,15 +40,13 @@ const UpdateAffectiveAssement = () => {
 
     // Create an array of affective assessments from formData
     const affectiveAssessments = [
+      { aCategory: 'Attendance', grade: formData.Attendance },
+      { aCategory: 'Carefulness', grade: formData.Carefulness },
+      { aCategory: 'Honesty', grade: formData.Honesty },
       { aCategory: 'Neatness', grade: formData.Neatness },
       { aCategory: 'Obedience', grade: formData.Obedience },
-      { aCategory: 'Punctuality', grade: formData.Punctuality },
       { aCategory: 'Politeness', grade: formData.Politeness },
-      { aCategory: 'Honesty', grade: formData.Honesty },
-      { aCategory: 'SelfControl', grade: formData.SelfControl },
-      { aCategory: 'Socialbility', grade: formData.Socialbility },
-      { aCategory: 'Leadership', grade: formData.Leadership },
-      { aCategory: 'Initiative', grade: formData.Initiative },
+      { aCategory: 'Punctuality', grade: formData.Punctuality },
       { aCategory: 'Responsibility', grade: formData.Responsibility },
     ].filter((assessment) => assessment.grade); // Filter out any empty values
 
@@ -107,15 +91,13 @@ const UpdateAffectiveAssement = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
               {[
+                'Attendance',
+                'Carefulness',
+                'Honesty',
                 'Neatness',
                 'Obedience',
-                'Punctuality',
                 'Politeness',
-                'Honesty',
-                'SelfControl',
-                'Socialbility',
-                'Leadership',
-                'Initiative',
+                'Punctuality',
                 'Responsibility',
               ].map((category) => (
                 <div key={category}>

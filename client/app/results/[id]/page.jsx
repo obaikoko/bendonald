@@ -135,10 +135,10 @@ const StudentResult = () => {
                     {data?.level}
                     {data.subLevel}
                   </p>
-                  <p className='text-sm'>
+                  {/* <p className='text-sm'>
                     <strong>POSITION IN CLASS:</strong>
                     {data?.position}
-                  </p>
+                  </p> */}
                   <p className='text-sm'>
                     <strong>STUDENT AVERAGE:</strong>
                     {data?.averageScore?.toFixed(2)}
