@@ -1,6 +1,7 @@
 import style from './styles/result.module.css';
 import AffectiveAssessment from './AffectiveAssessment';
 import { useGetNextTermInfoQuery } from '@/src/features/nextTerm/nextTermApiSlcie';
+import { formatDateTime } from '@/utils';
 
 const ResultTable = ({ data }) => {
   const level = `?level=${data.level}`;
@@ -38,7 +39,7 @@ const ResultTable = ({ data }) => {
               <tr>
                 <td className='px-4 py-2 font-bold'>SIGNATURE: ________</td>
                 <td className='px-4 py-2 font-bold'>
-                  RE-OPENING DATE: {nextTerm?.reOpeningDate.substring(0, 10)}
+                  RE-OPENING DATE: {formatDateTime(nextTerm?.reOpeningDate)}
                 </td>
               </tr>
               <tr className='border-t'>
@@ -112,10 +113,12 @@ const ResultTable = ({ data }) => {
             </tr>
             <tr>
               <td>
-                RE-OPENING DATE: {nextTerm?.reOpeningDate?.substring(0, 10)}
+                RE-OPENING DATE:{' '}
+                {formatDateTime(nextTerm?.reOpeningDate)}
               </td>
               <td>
-                NEXT TERM'S FEE: &#8358;{nextTerm?.nextTermFee?.toLocaleString()}
+                NEXT TERM'S FEE: &#8358;
+                {nextTerm?.nextTermFee?.toLocaleString()}
               </td>
               <td>
                 BUS FARE (Optional): &#8358;{nextTerm?.busFee?.toLocaleString()}

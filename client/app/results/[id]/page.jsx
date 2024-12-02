@@ -14,6 +14,7 @@ import UpdateRemark from '@/components/UpdateRemark';
 import { useSelector } from 'react-redux';
 import { FaPrint } from 'react-icons/fa';
 import DeleteResultBtn from '@/components/DeleteResultBtn';
+import { formatDateTime } from '@/utils';
 const StudentResult = () => {
   const [resultId, setResultId] = useState(null);
   const { id } = useParams();
