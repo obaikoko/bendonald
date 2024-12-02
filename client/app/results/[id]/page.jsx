@@ -2,6 +2,7 @@
 import ResultTable from '@/components/ResultTable';
 import LetterHead from '@/components/LetterHead';
 import Spinner from '@/components/Spinner';
+import { useGetStudentQuery } from '@/src/features/students/studentApiSlice';
 import { useGetResultQuery } from '@/src/features/results/resultApiSlice';
 import style from '@/components/styles/result.module.css';
 import { useEffect, useRef, useState } from 'react';
@@ -17,22 +18,29 @@ import DeleteResultBtn from '@/components/DeleteResultBtn';
 import { formatDateTime } from '@/utils';
 const StudentResult = () => {
   const [resultId, setResultId] = useState(null);
+  const [studentId, setStudentId] = useState('');
   const { id } = useParams();
   const componentRef = useRef();
   const { user } = useSelector((state) => state.auth);
   const { data, isLoading, isError } = useGetResultQuery(resultId);
 
+  const { data: student } = useGetStudentQuery(studentId);
+ 
+
+  
+
   useEffect(() => {
+    if (data) {
+      setStudentId(data.studentId);
+    }
+
     setResultId(id);
-  }, [id]);
+  }, [id, data]);
 
   if (isLoading) {
     return <Spinner clip={true} size={150} />;
   }
-  if (
-    data?.level === 'Lower Reception' ||
-    data?.level === 'Upper Reception' 
-  ) {
+  if (data?.level === 'Lower Reception' || data?.level === 'Upper Reception') {
     return (
       <div>
         <div className='bg-blue-950 h-20'></div>
@@ -41,11 +49,11 @@ const StudentResult = () => {
           {data && (
             <>
               <div ref={componentRef} className={style.print}>
-                <LetterHead />
+                <LetterHead image={data.image} />
                 <div className={style.header}>
                   <div className={style.headerContent}>
                     <p className='text-sm'>
-                      <strong>STUDENT NAME:</strong>
+                      <strong>STUDENT NAME:</strong>{' '}
                       {data?.firstName} {data?.otherName} {data?.lastName}{' '}
                     </p>
                     <p className='text-sm'>
@@ -112,12 +120,12 @@ const StudentResult = () => {
         {data && (
           <>
             <div ref={componentRef} className={style.print}>
-              <LetterHead />
+              <LetterHead image={data.image}/>
               <div className={style.header}>
                 <div className={style.headerContent}>
                   <p className='text-sm'>
-                    <strong>STUDENT NAME:</strong>
-                    {data?.firstName} {data?.otherName} {data?.lastName}{' '}
+                    <strong>STUDENT NAME:</strong>{' '}
+                    {student?.firstName} {student?.otherName} {student?.lastName}
                   </p>
                   <p className='text-sm'>
                     <strong>SESSION:</strong>

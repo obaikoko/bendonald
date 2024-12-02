@@ -2,6 +2,10 @@ import { FaMailBulk, FaPhone } from 'react-icons/fa';
 import style from './styles/letterHead.module.css';
 
 const LetterHead = ({ image }) => {
+ 
+  
+  
+  
   return (
     <div className={style.container}>
       <main className={style.main}>
