@@ -91,7 +91,7 @@ const ResultTable = ({ data }) => {
               <th>GRADE</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='text-base'>
             {data?.subjectResults &&
               data?.subjectResults.map((sr, index) => (
                 <tr key={index}>
@@ -108,13 +108,21 @@ const ResultTable = ({ data }) => {
             <tr>
               <td>NUMBER OF PEOPLE IN CLASS: {data.numberInClass}</td>
               <td>PASS/FAIL:{data?.averageScore >= 40 ? 'PASS' : 'FAILED'}</td>
-              <td>CONDUCT:________</td>
-              <td>SIGNATURE:________</td>
+              <td>CONDUCT: Satisfactory</td>
+              <td>
+                SIGNATURE:{' '}
+                <div className='w-14 h-6 '>
+                  <img
+                    height={5}
+                    src='/images/signature2.png'
+                    alt='signature'
+                  />
+                </div>
+              </td>
             </tr>
             <tr>
               <td>
-                RE-OPENING DATE:{' '}
-                {formatDateTime(nextTerm?.reOpeningDate)}
+                RE-OPENING DATE: {formatDateTime(nextTerm?.reOpeningDate)}
               </td>
               <td>
                 NEXT TERM'S FEE: &#8358;

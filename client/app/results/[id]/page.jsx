@@ -52,17 +52,17 @@ const StudentResult = () => {
                 <LetterHead image={data.image} />
                 <div className={style.header}>
                   <div className={style.headerContent}>
-                    <p className='text-sm'>
+                    <p className='text-base'>
                       <strong>STUDENT NAME:</strong>{' '}
                       {data?.firstName} {data?.otherName} {data?.lastName}{' '}
                     </p>
-                    <p className='text-sm'>
+                    <p className='text-base'>
                       <strong>SESSION:</strong>
                       {data?.session} {data?.term} Term
                     </p>
                   </div>
                   <div className={style.headerContent}>
-                    <p className='text-sm'>
+                    <p className='text-base'>
                       <strong>CLASS:</strong>
                       {data?.level}
                       {data.subLevel}
@@ -70,14 +70,14 @@ const StudentResult = () => {
                   </div>
                 </div>
                 <ResultTable data={data} />
-                <p className='text-sm'>
+                <p className='text-base'>
                   {' '}
                   <strong> Teachers's Remark: </strong> {data?.teacherRemark}
                 </p>
-                <p className='text-sm'>
+                <p className='text-base'>
                   <strong> Headmistress Remark:</strong> {data?.principalRemark}
                 </p>
-                <p className='text-sm'>
+                <p className='text-base'>
                   {' '}
                   <strong> Account Details:</strong>
                 </p>{' '}
@@ -123,45 +123,45 @@ const StudentResult = () => {
               <LetterHead image={data.image}/>
               <div className={style.header}>
                 <div className={style.headerContent}>
-                  <p className='text-sm'>
+                  <p className='text-base'>
                     <strong>STUDENT NAME:</strong>{' '}
                     {student?.firstName} {student?.otherName} {student?.lastName}
                   </p>
-                  <p className='text-sm'>
+                  <p className='text-base'>
                     <strong>SESSION:</strong>
                     {data?.session} {data?.term} Term
                   </p>
-                  <p className='text-sm'>
+                  <p className='text-base'>
                     <strong>STUDENT'S TOTAL SCORE:</strong>
                     {data?.totalScore} out of{' '}
                     {data?.subjectResults?.length * 100}
                   </p>
                 </div>
                 <div className={style.headerContent}>
-                  <p className='text-sm'>
+                  <p className='text-base'>
                     <strong>CLASS:</strong>
                     {data?.level}
                     {data.subLevel}
                   </p>
-                  {/* <p className='text-sm'>
+                  {/* <p className='text-base'>
                     <strong>POSITION IN CLASS:</strong>
                     {data?.position}
                   </p> */}
-                  <p className='text-sm'>
+                  <p className='text-base'>
                     <strong>STUDENT AVERAGE:</strong>
                     {data?.averageScore?.toFixed(2)}
                   </p>
                 </div>
               </div>
               <ResultTable data={data} />
-              <p className='text-sm'>
+              <p className='text-base'>
                 {' '}
                 <strong> Teachers's Remark: </strong> {data?.teacherRemark}
               </p>
-              <p className='text-sm'>
+              <p className='text-base'>
                 <strong> Principal's Remark:</strong> {data?.principalRemark}
               </p>
-              <p className='text-sm'>
+              <p className='text-base'>
                 {' '}
                 <strong> Account Details:</strong>
               </p>{' '}
