@@ -15,27 +15,28 @@ import UpdateRemark from '@/components/UpdateRemark';
 import { useSelector } from 'react-redux';
 import { FaPrint } from 'react-icons/fa';
 import DeleteResultBtn from '@/components/DeleteResultBtn';
-import { formatDateTime } from '@/utils';
 const StudentResult = () => {
   const [resultId, setResultId] = useState(null);
-  const [studentId, setStudentId] = useState('');
+  // const [studentId, setStudentId] = useState('');
   const { id } = useParams();
   const componentRef = useRef();
   const { user } = useSelector((state) => state.auth);
   const { data, isLoading, isError } = useGetResultQuery(resultId);
 
-  const { data: student } = useGetStudentQuery(studentId);
+  // const { data: student } = useGetStudentQuery(studentId);
  
 
   
 
   useEffect(() => {
-    if (data) {
-      setStudentId(data.studentId);
-    }
+    // if (data) {
+    //   setStudentId(data.studentId);
+    // }
 
     setResultId(id);
   }, [id, data]);
+
+  
 
   if (isLoading) {
     return <Spinner clip={true} size={150} />;
@@ -125,7 +126,7 @@ const StudentResult = () => {
                 <div className={style.headerContent}>
                   <p className='text-base'>
                     <strong>STUDENT NAME:</strong>{' '}
-                    {student?.firstName} {student?.otherName} {student?.lastName}
+                    {data?.firstName} {data?.otherName} {data?.lastName}
                   </p>
                   <p className='text-base'>
                     <strong>SESSION:</strong>

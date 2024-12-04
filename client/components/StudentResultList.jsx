@@ -4,7 +4,7 @@ import Link from 'next/link';
 import style from '../components/styles/studentList.module.css';
 
 import ReactToPrint from 'react-to-print';
-import { FaPrint } from 'react-icons/fa';
+import { FaArrowRight, FaPrint } from 'react-icons/fa';
 
 const StudentResultList = ({ data }) => {
   const componentRef = useRef();
@@ -40,10 +40,10 @@ const StudentResultList = ({ data }) => {
                     <td>
                       {rst.position ? (
                         <Link
-                          className='text-black'
+                          className='text-black underline'
                           href={`/results/${rst._id}`}
                         >
-                          {' '}
+                         <FaArrowRight className='inline mx-2 mb-1'/>
                           View
                         </Link>
                       ) : (
