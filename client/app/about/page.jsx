@@ -41,7 +41,7 @@ const AboutPage = () => {
               Our Mission & Vision
             </h2>
             <p className='text-lg leading-relaxed text-gray-600'>
-              Bendonald International School is committed to fostering a
+              Bendonalds International Schools is committed to fostering a
               holistic, globally-oriented education, integrating the British,
               Jolly Phonics, and Nigerian curricula across Crèche, Pre-Nursery,
               Nursery, Primary and Secondary classes.
@@ -106,7 +106,7 @@ const AboutPage = () => {
             </li>
             <li>
               <strong>Expansion to Secondary Education:</strong> In September
-              2022, Bendonalds International Secondary School opened its doors,
+              2022, Bendonalds International Secondary Schools opened its doors,
               marking a new chapter in providing quality education.
             </li>
           </ul>

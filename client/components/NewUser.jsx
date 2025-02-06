@@ -6,7 +6,7 @@ const NewUsers = () => {
     <section className='bg-gray-100 py-16 px-4 lg:px-32 text-center'>
       <div className='max-w-4xl mx-auto'>
         <h2 className='text-3xl md:text-5xl font-extrabold text-gray-800 mb-6'>
-          Welcome to Bendonald International Schools, Calabar
+          Welcome to Bendonalds International Schools, Calabar
         </h2>
 
         <p className='text-lg md:text-xl italic text-blue-950 mb-4'>
@@ -14,7 +14,7 @@ const NewUsers = () => {
         </p>
 
         <p className='text-gray-700 text-base md:text-lg leading-relaxed mb-8'>
-          Bendonald International Schools Calabar is committed to delivering a
+          Bendonalds International Schools Calabar is committed to delivering a
           world-class education in a nurturing and inspiring environment. Our
           mission is to develop tomorrow's leaders through academic excellence,
           personal growth, and global perspectives. Supported by experienced

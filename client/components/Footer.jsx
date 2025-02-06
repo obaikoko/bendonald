@@ -92,8 +92,8 @@ const Footer = () => {
 
       <div className='mt-8 border-t border-gray-700 pt-4 text-center'>
         <p className='text-gray-400'>
-          &copy; {currentYear} Bendonald International Schools. Powered by
-          Bendonald International Schools
+          &copy; {currentYear} Bendonalds International Schools. Powered by
+          Bendonalds International Schools
         </p>
       </div>
     </footer>

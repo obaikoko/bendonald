@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const images = [
   {
     url: '/images/building1.jpg',
-    text1: 'Bendonald International School',
+    text1: 'Bendonalds International Schools',
   },
   {
     url: '/images/building3.jpg',

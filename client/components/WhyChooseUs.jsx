@@ -6,7 +6,7 @@ const WhyChooseUs = () => {
       {/* Section Header */}
       <div className='text-center mb-12'>
         <h1 className='text-4xl font-bold text-blue-950'>
-          Why Choose Bendonald School?
+          Why Choose Bendonalds School?
         </h1>
         <p className='text-lg italic text-blue-950 max-w-3xl mx-auto mt-4'>
           Discover our commitment to nurturing excellence, creativity, and
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
               Academic Excellence
             </h2>
             <p className='text-lg text-gray-700'>
-              At Bendonald School, we foster a love for learning through a
+              At Bendonalds School, we foster a love for learning through a
               rigorous academic curriculum that encourages critical thinking,
               creativity, and resilience. Our dedicated teachers ensure that
               every student reaches their highest potential.
@@ -83,7 +83,7 @@ const WhyChooseUs = () => {
               Strong Community and Values
             </h2>
             <p className='text-lg text-gray-700'>
-              Bendonald School is built on a foundation of respect, integrity,
+              Bendonalds Schools is built on a foundation of respect, integrity,
               and inclusivity. We cultivate a supportive environment where
               students feel valued, empowered, and motivated to contribute
               positively to their community.

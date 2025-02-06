@@ -6,7 +6,7 @@ const About = () => {
     <section className='bg-gray-50 py-16 px-4'>
       <div className='text-center mb-12'>
         <h1 className='text-4xl font-bold text-gray-800 mb-4'>
-          School Life at Bendonald International
+          School Life at Bendonalds International Schools
         </h1>
         <p className='text-lg text-blue-950 font-medium'>
           A Vibrant, Enriching Experience for Every Student
@@ -20,7 +20,7 @@ const About = () => {
           </h2>
 
           <p className='text-gray-700 leading-relaxed text-base md:text-lg mb-8'>
-            At Bendonald International School Calabar, we believe that education is
+            At Bendonalds International School Calabar, we believe that education is
             a holistic experience. Our students enjoy a dynamic school life
             filled with opportunities to engage in sports, music, arts, and
             leadership activities. With a variety of clubs, societies, and

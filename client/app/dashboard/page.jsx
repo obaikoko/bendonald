@@ -40,7 +40,7 @@ function dashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!user?.isAdmin) {
+    if (!user ||  !user?.isAdmin) {
       router.push('/');
     }
   }, [user]);
