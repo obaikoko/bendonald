@@ -14,6 +14,11 @@ const PrePrimaryData = ({ data }) => {
         </thead>
         <tbody>
           <tr className='border-b'>
+            <td className='p-3'>Creche</td>
+            <td className='p-3'>{data.crecheMales}</td>
+            <td className='p-3'>{data.crecheFemales}</td>
+          </tr>
+          <tr className='border-b'>
             <td className='p-3'>Lower Reception</td>
             <td className='p-3'>{data.lowerReceptionMales}</td>
             <td className='p-3'>{data.lowerReceptionFemales}</td>

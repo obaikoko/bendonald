@@ -25,7 +25,7 @@ function UpdateUser({ data }) {
   const { firstName, lastName, level, subLevel, email, password, password2 } =
     formData;
   const [update, { isLoading }] = useUpdateUserMutation();
-  const { refetch } = useGetUserDetailsQuery( data._id );
+  const { refetch } = useGetUserDetailsQuery(data._id);
 
   const onChange = (e) => {
     setFormData((prev) => ({
@@ -119,6 +119,7 @@ function UpdateUser({ data }) {
               onChange={onChange}
             >
               <option value=''>Select Class</option>
+              <option value='Creche'>Creche</option>
               <option value='Lower Reception'>Lower Reception</option>
               <option value='Upper Reception'>Upper Reception</option>
               <option value='Nursery 1'>Nursery 1</option>

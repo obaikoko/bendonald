@@ -38,6 +38,7 @@ const SearchBox = () => {
           onChange={(e) => setLevel(e.target.value)}
         >
           <option value='All'>All</option>
+          <option value='Creche'>Creche</option>
           <option value='Lower Reception'>Lower Reception</option>
           <option value='Upper Reception'>Upper Reception</option>
           <option value='Nursery 1'>Nursery 1</option>

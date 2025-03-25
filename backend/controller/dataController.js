@@ -30,6 +30,14 @@ const studentsData = asyncHandler(async (req, res) => {
     (student) => student.gender === 'Male'
   );
 
+  // Creche male Students
+  const crecheMales = allStudent.filter(
+    (student) => student.level === 'Creche' && student.gender === 'Male'
+  );
+  // Creche Females Students
+  const crecheFemales = allStudent.filter(
+    (student) => student.level === 'Creche' && student.gender === 'Female'
+  );
   // Lower Reception male Students
   const lowerReceptionMale = allStudent.filter(
     (student) => student.level === 'Lower Reception' && student.gender === 'Male'
@@ -180,6 +188,8 @@ const studentsData = asyncHandler(async (req, res) => {
   res.json({
     females: femaleStudents.length,
     males: maleStudents.length,
+    crecheMales: crecheMales.length,
+    crecheFemales: crecheFemales.length,
     lowerReceptionMales: lowerReceptionMale.length,
     lowerReceptionFemales: lowerReceptionFemale.length,
     upperReceptionMales: upperReceptionMale.length,

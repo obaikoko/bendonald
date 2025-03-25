@@ -84,6 +84,7 @@ const RegisterStudent = asyncHandler(async (req, res) => {
 
   // Class level to code mapping
   const classCodeMapping = {
+    'Creche': 'CR',
     'Lower Reception': 'LR',
     'Upper Reception': 'UR',
     'Nursery 1': 'N1',
