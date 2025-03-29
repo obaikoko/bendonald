@@ -4,8 +4,8 @@ import { apiSlice } from '../apiSlice';
 export const nextTermApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getNextTermInfo: builder.query({
-      query: (level) => ({
-        url: `${NEXTTERM_URL}/${level}`,
+      query: ({ level, session, term }) => ({
+        url: `${NEXTTERM_URL}/?level=${level}&session=${session}&term=${term}`,
       }),
       providesTags: ['NextTerm'],
       keepUnusedDataFor: 5,

@@ -6,6 +6,14 @@ const nextTermInfo = new mongoose.Schema(
       type: Date,
       required: true,
     },
+    session: {
+      type: String,
+      required: true,
+    },
+    term: {
+      type: String,
+      required: true,
+    },
     level: {
       type: String,
       required: true,

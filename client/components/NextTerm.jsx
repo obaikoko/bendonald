@@ -10,13 +10,23 @@ const UpdateNextTerm = () => {
 
   const [formData, setFormData] = useState({
     nextTermFee: '',
+    session: '',
+    term: '',
     level: '',
     reOpeningDate: '',
     busFee: '',
     otherCharges: '',
   });
 
-  const { nextTermFee, level, reOpeningDate, busFee, otherCharges } = formData;
+  const {
+    nextTermFee,
+    session,
+    term,
+    level,
+    reOpeningDate,
+    busFee,
+    otherCharges,
+  } = formData;
   const [addNextTermInfo, { isLoading, isError }] =
     useAddNextTermInfoMutation();
 
@@ -32,6 +42,8 @@ const UpdateNextTerm = () => {
     try {
       const res = await addNextTermInfo({
         nextTermFee,
+        session,
+        term,
         level,
         reOpeningDate,
         busFee,
@@ -40,6 +52,8 @@ const UpdateNextTerm = () => {
       toast.success(res);
 
       setFormData({
+        session: '',
+        term: '',
         level: '',
         reOpeningDate: '',
         nextTermFee: '',
@@ -83,6 +97,37 @@ const UpdateNextTerm = () => {
                 onChange={onChange}
                 value={nextTermFee}
               ></input>
+            </div>
+            <div className='flex flex-col '>
+              <label htmlFor='session'>Session</label>
+              <select
+                className='bg-gray-300 rounded px-4 py-1'
+                name='session'
+                id='session'
+                onChange={onChange}
+              >
+                <option value=''>Select Session</option>
+                <option value='2024/2025'>2024/2025</option>
+                <option value='2025/2026'>2025/2026</option>
+                <option value='2026/2027'>2026/2027</option>
+                <option value='2027/2028'>2027/2028</option>
+                <option value='2028/2029'>2028/2029</option>
+                <option value='2029/2030'>2029/2030</option>
+              </select>
+            </div>
+            <div className='flex flex-col '>
+              <label htmlFor='session'>Term</label>
+              <select
+                className='bg-gray-300 rounded px-4 py-1'
+                name='term'
+                id='term'
+                onChange={onChange}
+              >
+                <option value=''>Select Term</option>
+                <option value='First'>First</option>
+                <option value='Second'>Second</option>
+                <option value='Third'>Third</option>
+              </select>
             </div>
             <div className='flex flex-col '>
               <label htmlFor='level'>Class</label>

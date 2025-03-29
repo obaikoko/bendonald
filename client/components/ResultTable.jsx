@@ -4,8 +4,11 @@ import { useGetNextTermInfoQuery } from '@/src/features/nextTerm/nextTermApiSlci
 import { formatDateTime } from '@/utils';
 
 const ResultTable = ({ data }) => {
-  const level = `?level=${data.level}`;
-  const { data: nextTerm } = useGetNextTermInfoQuery(level);
+  const level = data.level;
+  const session = data.session;
+  const term = data.term;
+
+  const { data: nextTerm } = useGetNextTermInfoQuery({ level, session, term });
 
   if (data.level === 'Lower Reception' || data.level === 'Upper Reception') {
     return (
