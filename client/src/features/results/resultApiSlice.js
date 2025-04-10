@@ -43,6 +43,7 @@ export const resultsApiSlice = apiSlice.injectEndpoints({
         credentials: 'include',
       }),
     }),
+
     deleteResult: builder.mutation({
       query: (resultId) => ({
         url: `${RESULTS_URL}/${resultId}`,
@@ -55,6 +56,14 @@ export const resultsApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${RESULTS_URL}/positions`,
         method: 'POST',
+        body: data,
+        credentials: 'include',
+      }),
+    }),
+    removeSubject: builder.mutation({
+      query: (data) => ({
+        url: `${RESULTS_URL}/subjects`,
+        method: 'PUT',
         body: data,
         credentials: 'include',
       }),
@@ -78,5 +87,6 @@ export const {
   useGenerateResultMutation,
   useDeleteResultMutation,
   useGeneratePositionsMutation,
-  useGenerateBroadsheetMutation
+  useRemoveSubjectMutation,
+  useGenerateBroadsheetMutation,
 } = resultsApiSlice;

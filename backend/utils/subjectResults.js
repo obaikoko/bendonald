@@ -32,7 +32,7 @@ const subjectResults = ({ level }) => {
       { subject: 'Christian Religious Knowledge' },
       { subject: 'Civic Education' },
       { subject: 'Computer Science(ICT)' },
-      { subject: 'Creative Art' },
+      // { subject: 'Creative Art' },
       { subject: 'French' },
       { subject: 'Home Economics' },
       { subject: 'Literature-In-English' },

@@ -24,6 +24,7 @@ import Link from 'next/link';
 import { FaArrowAltCircleRight, FaFemale, FaMale } from 'react-icons/fa';
 import GraduateStudents from '@/components/GraduateStudents';
 import ResetStudentFee from '@/components/ResetStudentFee';
+import RemoveSubject from '@/components/RemoveSubjectForm';
 
 function dashboard() {
   const { data, isLoading, isError } = useGetStudentsDataQuery();
@@ -40,7 +41,7 @@ function dashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!user ||  !user?.isAdmin) {
+    if (!user || !user?.isAdmin) {
       router.push('/');
     }
   }, [user]);
@@ -107,6 +108,7 @@ function dashboard() {
               <UpdateNextTerm />
               <UpdateEvent />
               <div>
+              <RemoveSubject />
                 <GraduateStudents />
                 <ResetStudentFee />
               </div>

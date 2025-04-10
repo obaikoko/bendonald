@@ -11,7 +11,7 @@ const AffectiveAssessment = ({ data }) => {
             <th>Affective Assessment</th>
           </tr>
         </thead>
-       <tbody className='text-base'>
+        <tbody className='text-base'>
           {data?.affectiveAssessment &&
             data?.affectiveAssessment.map((af, index) => (
               <tr key={index}>
@@ -27,7 +27,7 @@ const AffectiveAssessment = ({ data }) => {
             <th>Psychomotor</th>
           </tr>
         </thead>
-       <tbody className='text-base'>
+        <tbody className='text-base'>
           {data?.psychomotor &&
             data?.psychomotor.map((psy, index) => (
               <tr key={index}>
@@ -43,23 +43,19 @@ const AffectiveAssessment = ({ data }) => {
             <th>Grading System</th>
           </tr>
         </thead>
-       <tbody className='text-base'>
+        <tbody className='text-base'>
           <tr>
             <td>90 - 100</td>
             <td>A+</td>
           </tr>
-          <tr>
-            <td>80 - 90</td>
-            <td>A</td>
-          </tr>
 
           <tr>
             <td>80 - 89</td>
-            <td>B+</td>
+            <td>A</td>
           </tr>
           <tr>
             <td>70 - 79</td>
-            <td>B</td>
+            <td>B+</td>
           </tr>
           <tr>
             <td>60 - 69</td>

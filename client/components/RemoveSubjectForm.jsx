@@ -1,24 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useGeneratePositionsMutation } from '@/src/features/results/resultApiSlice';
+import { useState } from 'react';
+import { useRemoveSubjectMutation } from '@/src/features/results/resultApiSlice';
 import { toast } from 'react-toastify';
-import style from './styles/updateResult.module.css';
-import { useRouter } from 'next/navigation';
 import Spinner from '@/components/Spinner';
 
-const GeneratePositions = () => {
-  const router = useRouter();
-
+const RemoveSubject = () => {
   const [isResultForm, setIsResultForm] = useState(false);
 
   const [formData, setFormData] = useState({
     session: '',
     term: '',
     level: '',
-    subLevel: '',
+    subjectName: '',
   });
 
-  const { session, term, level, subLevel } = formData;
-  const [positions, { isLoading }] = useGeneratePositionsMutation();
+  const { session, term, level, subjectName } = formData;
+  const [removeSubject, { isLoading }] = useRemoveSubjectMutation();
 
   const onChange = (e) => {
     setFormData((prev) => ({
@@ -30,22 +26,20 @@ const GeneratePositions = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await positions({
+      const res = await removeSubject({
         session,
         term,
         level,
-        subLevel
+        subjectName,
       }).unwrap();
-
-      router.push('/results');
-      refetch();
-      toast.success(` Positions Generated Successfully`);
+      toast.success(res);
       setFormData({
         session: '',
         term: '',
         level: '',
-        subLevel: '',
+        subjectName: '',
       });
+      refetch();
     } catch (err) {
       console.log(err?.data?.message || err.error);
       toast.error(err?.data?.message || err.error);
@@ -60,10 +54,10 @@ const GeneratePositions = () => {
         <button
           className={`${
             isResultForm ? 'hidden' : 'block'
-          } bg-blue-950 text-white px-2 py-2 rounded mt-4 lg:ml-2 w-full`}
+          } bg-orange-700 text-white px-2 py-2 rounded mt-4 lg:ml-2 w-full`}
           onClick={clickedUserForm}
         >
-          PUBLISH RESULTS
+          REMOVE SUBJECT FROM RESULTS
         </button>
         <div
           className={`${
@@ -71,7 +65,7 @@ const GeneratePositions = () => {
           } bg-gray-100 p-6 rounded shadow-lg`}
         >
           <form className='space-y-4 ' onSubmit={onSubmit}>
-            <h2>Publish Results</h2>
+            <h2>Remove subject from results</h2>
             <div className='flex flex-col '>
               <label htmlFor='session'>Select session</label>
               <select
@@ -132,20 +126,41 @@ const GeneratePositions = () => {
               </select>
             </div>
             <div className='flex flex-col '>
-              <label htmlFor='rstSubLevel' className='form-label'>
-                Sub Class
+              <label htmlFor='rstSubjectName' className='form-label'>
+                Subject
               </label>
               <select
-                name='subLevel'
-                id='rstSubLevel'
+                name='subjectName'
+                id='rstSubjectName'
                 className='bg-gray-300 rounded px-4 py-1 '
                 onChange={onChange}
               >
-                <option value=''>Select sub class category</option>
-                <option value='A'>A</option>
-                <option value='B'>B</option>
-                <option value='C'>C</option>
-                <option value='D'>D</option>
+                <option value=''>Select subject to remove</option>
+                <option value='Mathematics'>Mathematics</option>
+                <option value='English'>English</option>
+                <option value='Agricultural Science'>
+                  Agricultural Science
+                </option>
+                <option value='Basic Science'>Basic Science</option>
+                <option value='Basic Technology'>Basic Technology</option>
+                <option value='Business Studies'>Business Studies</option>
+                <option value='Christian Religious Knowledge'>
+                  Christian Religious Knowledge
+                </option>
+                <option value='Civic Education'>Civic Education</option>
+                <option value='Computer Science(ICT)'>
+                  Computer Science(ICT)
+                </option>
+                <option value='Creative Art'>Creative Art</option>
+                <option value='French'>French</option>
+                <option value='Home Economics'>Home Economics</option>
+                <option value='Literature-In-English'>
+                  Literature-In-English
+                </option>
+                <option value='Social Studies'>Social Studies</option>
+                <option value='Physical And Health Education'>
+                  Physical And Health Education
+                </option>
               </select>
             </div>
 
@@ -154,10 +169,10 @@ const GeneratePositions = () => {
             ) : (
               <>
                 <button
-                  className='bg-blue-950 text-white px-2 py-1 rounded'
+                  className='bg-red-600 text-white px-2 py-1 rounded'
                   type='submit'
                 >
-                  Publish
+                  Remove
                 </button>
                 <button
                   onClick={clickedUserForm}
@@ -175,4 +190,4 @@ const GeneratePositions = () => {
   );
 };
 
-export default GeneratePositions;
+export default RemoveSubject;

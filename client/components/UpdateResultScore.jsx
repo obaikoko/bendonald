@@ -150,8 +150,12 @@ const UpdateResultScore = ({ level }) => {
                   <option value='Christian Religious Knowledge'>
                     Christian Religious Knowledge
                   </option>
-                  <option value='Computer Science(ICT)'>Computer Science(ICT)</option>
-                  <option value='Prevocational Studies'>Prevocational Studies</option>
+                  <option value='Computer Science(ICT)'>
+                    Computer Science(ICT)
+                  </option>
+                  <option value='Prevocational Studies'>
+                    Prevocational Studies
+                  </option>
                   <option value='Calligraphy'>Calligraphy</option>
                   <option value='Jolly Phonics'>Jolly Phonics</option>
                 </select>
@@ -169,9 +173,7 @@ const UpdateResultScore = ({ level }) => {
                   <option value=''>Enter Result Score</option>
                   <option value='English'>English</option>
                   <option value='Mathematics'>Mathematics</option>
-                  <option value='Social Studies'>
-                    Social Studies
-                  </option>
+                  <option value='Social Studies'>Social Studies</option>
                   <option value='Basic Science'>Basic Science</option>
                   <option value='Physical And Health Education'>
                     Physical And Health Education
