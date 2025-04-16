@@ -52,6 +52,14 @@ export const resultsApiSlice = apiSlice.injectEndpoints({
       }),
       providesTags: ['Results'],
     }),
+    addSubject: builder.mutation({
+      query: (data) => ({
+        url: `${RESULTS_URL}/subjects`,
+        method: 'POST',
+        body: data,
+        credentials: 'include',
+      }),
+    }),
     generatePositions: builder.mutation({
       query: (data) => ({
         url: `${RESULTS_URL}/positions`,
@@ -63,6 +71,14 @@ export const resultsApiSlice = apiSlice.injectEndpoints({
     removeSubject: builder.mutation({
       query: (data) => ({
         url: `${RESULTS_URL}/subjects`,
+        method: 'PUT',
+        body: data,
+        credentials: 'include',
+      }),
+    }),
+    resultPayment: builder.mutation({
+      query: (data) => ({
+        url: `${RESULTS_URL}/payment`,
         method: 'PUT',
         body: data,
         credentials: 'include',
@@ -88,5 +104,7 @@ export const {
   useDeleteResultMutation,
   useGeneratePositionsMutation,
   useRemoveSubjectMutation,
+  useAddSubjectMutation,
+  useResultPaymentMutation,
   useGenerateBroadsheetMutation,
 } = resultsApiSlice;

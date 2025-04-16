@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useRemoveSubjectMutation } from '@/src/features/results/resultApiSlice';
+import { useAddSubjectMutation } from '@/src/features/results/resultApiSlice';
 import { toast } from 'react-toastify';
 import Spinner from '@/components/Spinner';
 
-const RemoveSubject = () => {
+const AddSubject = () => {
   const [isResultForm, setIsResultForm] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ const RemoveSubject = () => {
   });
 
   const { session, term, level, subjectName } = formData;
-  const [removeSubject, { isLoading }] = useRemoveSubjectMutation();
+  const [addSubject, { isLoading }] = useAddSubjectMutation();
 
   const onChange = (e) => {
     setFormData((prev) => ({
@@ -26,7 +26,7 @@ const RemoveSubject = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await removeSubject({
+      const res = await addSubject({
         session,
         term,
         level,
@@ -54,10 +54,10 @@ const RemoveSubject = () => {
         <button
           className={`${
             isResultForm ? 'hidden' : 'block'
-          } bg-orange-700 text-white px-2 py-2 rounded mt-4 lg:ml-2 w-full`}
+          } bg-green-700 text-white px-2 py-2 rounded mt-4 lg:ml-2 w-full`}
           onClick={clickedUserForm}
         >
-          REMOVE SUBJECT FROM RESULTS
+          Add SUBJECT TO RESULTS
         </button>
         <div
           className={`${
@@ -65,7 +65,7 @@ const RemoveSubject = () => {
           } bg-gray-100 p-6 rounded shadow-lg`}
         >
           <form className='space-y-4 ' onSubmit={onSubmit}>
-            <h2>Remove subject from results</h2>
+            <h2>Add subject to results</h2>
             <div className='flex flex-col '>
               <label htmlFor='session'>Select session</label>
               <select
@@ -208,10 +208,10 @@ const RemoveSubject = () => {
             ) : (
               <>
                 <button
-                  className='bg-red-600 text-white px-2 py-1 rounded'
+                  className='bg-green-600 text-white px-2 py-1 rounded'
                   type='submit'
                 >
-                  Remove
+                  Add
                 </button>
                 <button
                   onClick={clickedUserForm}
@@ -229,4 +229,4 @@ const RemoveSubject = () => {
   );
 };
 
-export default RemoveSubject;
+export default AddSubject;

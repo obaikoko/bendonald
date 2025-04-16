@@ -15,7 +15,6 @@ const StudentResultList = ({ data }) => {
         <thead>
           <tr>
             <th>S/N</th>
-            <th>SESSION</th>
             <th>CLASS</th>
             <th>TERM</th>
             <th>STATUS</th>
@@ -32,22 +31,28 @@ const StudentResultList = ({ data }) => {
                 data.map((rst, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
-
-                    <td>{rst.session}</td>
                     <td>{rst.level}</td>
                     <td>{`${rst.term} Term`}</td>
 
                     <td>
-                      {rst.position ? (
-                        <Link
-                          className='text-black underline'
-                          href={`/results/${rst._id}`}
-                        >
-                         <FaArrowRight className='inline mx-2 mb-1'/>
-                          View
-                        </Link>
+                      {rst.isPaid ? (
+                        <>
+                          {rst.position ? (
+                            <Link
+                              className='text-black underline'
+                              href={`/results/${rst._id}`}
+                            >
+                              <button className='bg-blue-950 text-white hover:bg-blue-800 px-3 rounded'>
+                                <FaArrowRight className='inline mx-2 mb-1' />
+                                View
+                              </button>
+                            </Link>
+                          ) : (
+                            'In Progress'
+                          )}
+                        </>
                       ) : (
-                        'Processing'
+                        'No Access'
                       )}
                     </td>
                   </tr>

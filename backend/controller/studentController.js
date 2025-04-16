@@ -192,13 +192,6 @@ const getStudentResults = asyncHandler(async (req, res) => {
   const results = await Result.find({ studentId: req.student._id }).sort({
     createdAt: -1,
   });
-  if (!req.student.isPaid) {
-    res.status(401);
-
-    throw new Error(
-      'Unable to access your result due to non payment of fees, Please proceed to the school administration and make your payment '
-    );
-  }
 
   if (results) {
     res.status(200);

@@ -336,7 +336,9 @@ const addSubjectToResults = asyncHandler(async (req, res) => {
   const { session, term, level, subjectName } = req.body;
   if (!session || !term || !level || !subjectName) {
     res.status(400);
-    res.json('Please add all field (session, term, level and subjectName)');
+    throw new Error(
+      'Please add all field (session, term, level and subjectName)'
+    );
   }
 
   // Define a new subject template
@@ -416,6 +418,32 @@ const deleteResult = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc updates result to paid and makes it visible to student
+// @privacy private
+
+const updateResultPayment = asyncHandler(async (req, res) => {
+  const { resultId, resultFee } = req.body;
+
+  if (!resultId) {
+    res.status(400);
+    throw new Error('Bad request! no resultId');
+  }
+  const result = await Result.findById(resultId);
+  if (!result) {
+    res.status(404);
+    throw new Error('Result not found!');
+  }
+  if (resultFee && resultFee === 'paid') {
+    result.isPaid = true;
+  } else if (resultFee && resultFee === 'notPaid') {
+    result.isPaid = false;
+  }
+  await result.save();
+
+  res.status(200);
+  res.json('Payment status updated successfully');
+});
+
 const generatePositions = asyncHandler(async (req, res) => {
   if (!req.user) {
     res.status(401);
@@ -477,6 +505,7 @@ export {
   getResults,
   getResult,
   updateResult,
+  updateResultPayment,
   addSubjectToResults,
   manualSubjectRemoval,
   deleteResult,

@@ -15,6 +15,7 @@ import UpdateRemark from '@/components/UpdateRemark';
 import { useSelector } from 'react-redux';
 import { FaPrint } from 'react-icons/fa';
 import DeleteResultBtn from '@/components/DeleteResultBtn';
+import UpdateResultPaymentButton from '@/components/UpdateResultPaymentButton';
 const StudentResult = () => {
   const [resultId, setResultId] = useState(null);
   // const [studentId, setStudentId] = useState('');
@@ -24,9 +25,6 @@ const StudentResult = () => {
   const { data, isLoading, isError } = useGetResultQuery(resultId);
 
   // const { data: student } = useGetStudentQuery(studentId);
- 
-
-  
 
   useEffect(() => {
     // if (data) {
@@ -35,8 +33,6 @@ const StudentResult = () => {
 
     setResultId(id);
   }, [id, data]);
-
-  
 
   if (isLoading) {
     return <Spinner clip={true} size={150} />;
@@ -54,8 +50,8 @@ const StudentResult = () => {
                 <div className={style.header}>
                   <div className={style.headerContent}>
                     <p className='text-base'>
-                      <strong>STUDENT NAME:</strong>{' '}
-                      {data?.firstName} {data?.otherName} {data?.lastName}{' '}
+                      <strong>STUDENT NAME:</strong> {data?.firstName}{' '}
+                      {data?.otherName} {data?.lastName}{' '}
                     </p>
                     <p className='text-base'>
                       <strong>SESSION:</strong>
@@ -121,12 +117,12 @@ const StudentResult = () => {
         {data && (
           <>
             <div ref={componentRef} className={style.print}>
-              <LetterHead image={data.image}/>
+              <LetterHead image={data.image} />
               <div className={style.header}>
                 <div className={style.headerContent}>
                   <p className='text-base'>
-                    <strong>STUDENT NAME:</strong>{' '}
-                    {data?.firstName} {data?.otherName} {data?.lastName}
+                    <strong>STUDENT NAME:</strong> {data?.firstName}{' '}
+                    {data?.otherName} {data?.lastName}
                   </p>
                   <p className='text-base'>
                     <strong>SESSION:</strong>
@@ -189,6 +185,7 @@ const StudentResult = () => {
                 <UpdatePsychomotor />
                 <UpdateRemark />
                 <DeleteResultBtn result={data._id} />
+                <UpdateResultPaymentButton />
               </>
             )}
           </>

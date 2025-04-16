@@ -25,6 +25,7 @@ import { FaArrowAltCircleRight, FaFemale, FaMale } from 'react-icons/fa';
 import GraduateStudents from '@/components/GraduateStudents';
 import ResetStudentFee from '@/components/ResetStudentFee';
 import RemoveSubject from '@/components/RemoveSubjectForm';
+import AddSubject from '@/components/AddSubject';
 
 function dashboard() {
   const { data, isLoading, isError } = useGetStudentsDataQuery();
@@ -108,7 +109,8 @@ function dashboard() {
               <UpdateNextTerm />
               <UpdateEvent />
               <div>
-              <RemoveSubject />
+                <RemoveSubject />
+                <AddSubject />
                 <GraduateStudents />
                 <ResetStudentFee />
               </div>

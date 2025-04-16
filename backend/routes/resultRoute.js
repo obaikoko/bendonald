@@ -6,6 +6,7 @@ import {
   getResult,
   getResults,
   updateResult,
+  updateResultPayment,
   manualSubjectRemoval,
   generateBroadsheet,
   deleteResult,
@@ -16,6 +17,7 @@ const router = express.Router();
 
 router.route('/positions').post(protect, admin, generatePositions);
 router.route('/broadsheet').post(protect, generateBroadsheet);
+router.route('/payment').put(protect, admin, updateResultPayment);
 router
   .route('/subjects')
   .put(protect, admin, manualSubjectRemoval)

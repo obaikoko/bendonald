@@ -19,7 +19,7 @@ const UpdateResultScore = ({ level }) => {
   });
 
   const { test, exam, grade, subject } = formData;
-  const { refetch } = useGetResultQuery(resultId);
+  const { data, refetch } = useGetResultQuery(resultId);
   const [result, { isLoading }] = useUpdateResultMutation();
 
   useEffect(() => {
@@ -79,195 +79,24 @@ const UpdateResultScore = ({ level }) => {
             <h2 className='text-lg font-bold'>Update Scores</h2>
             <div className='flex flex-col '>
               <label htmlFor='subject'>Select Subject</label>
-              {level === 'Lower Reception' || level === 'Upper Reception' ? (
-                <select
-                  className='bg-gray-300 rounded px-4 py-1 '
-                  name='subject'
-                  id='subject'
-                  onChange={onChange}
-                >
-                  <option value=''>Select Grade</option>
 
-                  <option value='Language Practices'>Language Practices</option>
-                  <option value='Independence'>Independence</option>
-                  <option value='Control Of Movement'>
-                    Control Of Movement
-                  </option>
-                  <option value='Object Identification'>
-                    Object Identification
-                  </option>
-                  <option value='Oral Number Work'>Oral Number Work</option>
-                  <option value='Scribbling'>Scribbling</option>
-                  <option value='Sociability'>Sociability</option>
-                  <option value='Responsibility'>Responsibility</option>
-
-                  <option value='Nursery Rhymes/Poems'>
-                    Nursery Rhymes/Poems
-                  </option>
-                  <option value='Drawing And Colouring'>
-                    Drawing And Colouring
-                  </option>
-                  <option value='Singing'>Singing</option>
-                  <option value='Games'>Games</option>
-                </select>
-              ) : level === 'Nursery 1' ? (
-                <select
-                  className='bg-gray-300 rounded px-4 py-1 '
-                  name='subject'
-                  id='subject'
-                  onChange={onChange}
-                >
-                  <option value=''>Enter Result Score</option>
-                  <option value='English'>English</option>
-                  <option value='Mathematics'>Mathematics</option>
-                  <option value='Social Studies'>Social Studies</option>
-                  <option value='Basic Science'>Basic Science</option>
-                  <option value='Physical And Health Education'>
-                    Physical And Health Education
-                  </option>
-                  <option value='Christian Religious Knowledge'>
-                    Christian Religious Knowledge
-                  </option>
-                  <option value='Creative Art'>Creative Art</option>
-                  <option value='Calligraphy'>Calligraphy</option>
-                  <option value='Jolly Phonics'>Jolly Phonics</option>
-                </select>
-              ) : level === 'Nursery 2' ? (
-                <select
-                  className='bg-gray-300 rounded px-4 py-1 '
-                  name='subject'
-                  id='subject'
-                  onChange={onChange}
-                >
-                  <option value=''>Enter Result Score</option>
-                  <option value='English'>English</option>
-                  <option value='Mathematics'>Mathematics</option>
-                  <option value='Social Studies'>Social Studies</option>
-                  <option value='Basic Science'>Basic Science</option>
-                  <option value='Physical And Health Education'>
-                    Physical And Health Education
-                  </option>
-                  <option value='Christian Religious Knowledge'>
-                    Christian Religious Knowledge
-                  </option>
-                  <option value='Computer Science(ICT)'>
-                    Computer Science(ICT)
-                  </option>
-                  <option value='Prevocational Studies'>
-                    Prevocational Studies
-                  </option>
-                  <option value='Calligraphy'>Calligraphy</option>
-                  <option value='Jolly Phonics'>Jolly Phonics</option>
-                </select>
-              ) : level === 'Grade 1' ||
-                level === 'Grade 2' ||
-                level === 'Grade 3' ||
-                level === 'Grade 4' ||
-                level === 'Grade 5' ? (
-                <select
-                  className='bg-gray-300 rounded px-4 py-1 '
-                  name='subject'
-                  id='subject'
-                  onChange={onChange}
-                >
-                  <option value=''>Enter Result Score</option>
-                  <option value='English'>English</option>
-                  <option value='Mathematics'>Mathematics</option>
-                  <option value='Social Studies'>Social Studies</option>
-                  <option value='Basic Science'>Basic Science</option>
-                  <option value='Physical And Health Education'>
-                    Physical And Health Education
-                  </option>
-                  <option value='Christian Religious Knowledge'>
-                    Christian Religious Knowledge
-                  </option>
-                  <option value='Civic Education'>Civic Education</option>
-                  <option value='Computer Science(ICT)'>
-                    Computer Science(ICT)
-                  </option>
-                  <option value='Quantitative Reasoning'>
-                    Quantitative Reasoning
-                  </option>
-                  <option value='Verbal Reasoning'>Verbal Reasoning</option>
-                  <option value='Prevocational Studies'>
-                    Prevocational Studies
-                  </option>
-                  <option value='Spelling Bee'>Spelling Bee</option>
-                </select>
-              ) : level === 'JSS 1' ||
-                level === 'JSS 2' ||
-                level === 'JSS 3' ? (
-                <select
-                  className='bg-gray-300 rounded px-4 py-1 '
-                  name='subject'
-                  id='subject'
-                  onChange={onChange}
-                >
-                  <option value=''>Enter Result Score</option>
-                  <option value='Mathematics'>Mathematics</option>
-                  <option value='English'>English</option>
-                  <option value='Agricultural Science'>
-                    Agricultural Science
-                  </option>
-                  <option value='Basic Science'>Basic Science</option>
-                  <option value='Basic Technology'>Basic Technology</option>
-                  <option value='Business Studies'>Business Studies</option>
-                  <option value='Christian Religious Knowledge'>
-                    Christian Religious Knowledge
-                  </option>
-                  <option value='Civic Education'>Civic Education</option>
-                  <option value='Computer Science(ICT)'>
-                    Computer Science(ICT)
-                  </option>
-                  <option value='Creative Art'>Creative Art</option>
-                  <option value='French'>French</option>
-                  <option value='Home Economics'>Home Economics</option>
-                  <option value='Literature-In-English'>
-                    Literature-In-English
-                  </option>
-                  <option value='Social Studies'>Social Studies</option>
-                  <option value='Physical And Health Education'>
-                    Physical And Health Education
-                  </option>
-                </select>
-              ) : (
-                <select
-                  className='bg-gray-300 rounded px-4 py-1 '
-                  name='subject'
-                  id='subject'
-                  onChange={onChange}
-                >
-                  <option value=''>Enter Result Score</option>
-                  <option value='Mathematics'>Mathematics</option>
-                  <option value='English'>English</option>
-                  <option value='Agricultural Science'>
-                    Agricultural Science
-                  </option>
-                  <option value='Biology'>Biology</option>
-                  <option value='Chemistry'>Chemistry</option>
-                  <option value='Physics'>Physics</option>
-                  <option value='Further Mathematics'>
-                    Further Mathematics
-                  </option>
-
-                  <option value='Christian Religious Knowledge'>
-                    Christian Religious Knowledge
-                  </option>
-                  <option value='Civic Education'>Civic Education</option>
-                  <option value='Computer Science(ICT)'>
-                    Computer Science(ICT)
-                  </option>
-                  <option value='Geography'>Geography</option>
-                  <option value='Economics'>Economics</option>
-                  <option value='Government'>Government</option>
-                  <option value='History'>History</option>
-                  <option value='Commerce'>Commerce</option>
-                  <option value='Technical Drawing'>Technical Drawing</option>
-                  <option value='Literature-In-English'>
-                    Literature-In-English
-                  </option>
-                </select>
-              )}
+              <select
+                className='bg-gray-300 rounded px-4 py-1'
+                name='subject'
+                id='subject'
+                onChange={onChange}
+              >
+                <option value=''>Select Subject</option>
+                {data?.subjectResults?.length > 0 ? (
+                  data.subjectResults.map((result, index) => (
+                    <option key={index} value={result.subject}>
+                      {result.subject}
+                    </option>
+                  ))
+                ) : (
+                  <option disabled>No subjects available</option>
+                )}
+              </select>
             </div>
             {level === 'Lower Reception' || level === 'Upper Reception' ? (
               <>

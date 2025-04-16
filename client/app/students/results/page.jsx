@@ -34,11 +34,7 @@ const ResultPage = () => {
       <div className='bg-blue-950 h-20'></div>
       <div>
         {isLoading && <Spinner clip={true} size={150} />}
-        {isError && (
-          <p>
-            Unable to fetch results this might be due to non payment of fees
-          </p>
-        )}
+        {isError && <p>Unable to fetch results</p>}
         {data && <StudentResultList data={data} />}
       </div>
     </>
