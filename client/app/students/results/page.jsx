@@ -1,33 +1,13 @@
 'use client';
-import { useState, useEffect } from 'react';
+
 import { useGetStudentResultsQuery } from '@/src/features/students/studentApiSlice';
 import Spinner from '@/components/Spinner';
-import Pagination from '@/components/Pagination';
-import { debounce } from 'lodash';
-import style from '@/components/styles/result.module.css';
+
 
 import StudentResultList from '@/components/StudentResultList';
 
 const ResultPage = () => {
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
   const { data, isLoading, isError } = useGetStudentResultsQuery();
-
-  const totalPages = data && data.totalPages;
-
-  useEffect(() => {
-    setLoading(isLoading);
-    if (isError) {
-      setLoading(false);
-    }
-  }, [data, isError]);
-
-  const handlePageChange = debounce((newPage) => {
-    if (newPage !== page) {
-      setLoading(true);
-      setPage(newPage);
-    }
-  }, 300);
 
   return (
     <>

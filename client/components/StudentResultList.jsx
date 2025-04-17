@@ -35,7 +35,7 @@ const StudentResultList = ({ data }) => {
                     <td>{`${rst.term} Term`}</td>
 
                     <td>
-                      {rst.isPaid ? (
+                      {1 === 1 ? (
                         <>
                           {rst.position ? (
                             <Link
