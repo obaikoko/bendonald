@@ -361,10 +361,26 @@ const updateStudent = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc Sets Selected result to paid or not paid
+// @route POST /students/fees
+// @privacy Private Admin
 const resetStudentFees = asyncHandler(async (req, res) => {
-  await Student.updateMany({}, { isPaid: false });
+  const { session, term } = req.body;
+  if (!session || !term) {
+    res.status(400);
+    throw new Error('Please add all fields');
+  }
 
-  res.status(200).json('All student payment status has been set to not paid');
+  const results = await Result.find({ session, term });
+
+  if (!results || results.length === 0) {
+    res.status(404);
+    throw new Error('No result found!');
+  }
+
+  await Result.updateMany({ session, term }, { isPaid: true });
+
+  res.status(200).json(`${session} ${term} results is now accessble`);
 });
 
 // @desc Delete student

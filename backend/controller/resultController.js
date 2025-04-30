@@ -150,21 +150,38 @@ const getResults = asyncHandler(async (req, res) => {
     throw new Error('Result does not exist');
   }
 });
-
 // @GET STUDENT RESULT
-// @route GET api/results/id
+// @route GET api/results/:id
 // @privacy Private
 const getResult = asyncHandler(async (req, res) => {
   const result = await Result.findById(req.params.id);
-
+  
   if (!result) {
     res.status(404);
     throw new Error('Result does not exist');
   }
 
-  res.status(200);
-  res.json(result);
+  // If a student is making the request
+  if (req.student) {
+    const isOwner = req.student._id.toString() === result.studentId.toString();
+
+    if (!isOwner) {
+      res.status(401);
+      throw new Error('Unauthorized Access!');
+    }
+
+    if (!result.isPaid) {
+      res.status(401);
+      throw new Error('Unable to access result, Please contact the admin');
+    }
+  }
+
+  // If a teacher (user) is making the request, allow access regardless of isPaid
+  // No additional checks needed unless you want to restrict teachers to only certain results
+
+  res.status(200).json(result);
 });
+
 
 // @UPDATE STUDENT RESULT
 // @route PUT api/results/id
@@ -457,7 +474,9 @@ const generatePositions = asyncHandler(async (req, res) => {
 
     if (!results || results.length === 0) {
       res.status(404);
-      throw new Error('No results found for the specified class and session');
+      throw new Error(
+        `No results found for  ${level}${subLevel} ${session} session`
+      );
     }
 
     // Sort results by average score in descending order
@@ -472,7 +491,9 @@ const generatePositions = asyncHandler(async (req, res) => {
     // Save updated results
     await Promise.all(results.map((result) => result.save()));
 
-    res.status(200).send(results);
+    res
+      .status(200)
+      .json(`${level}${subLevel} ${session} Results Published Successfully`);
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -499,7 +520,6 @@ const generateBroadsheet = asyncHandler(async (req, res) => {
   // Return the transformed data
   res.json(transformedResults);
 });
-
 
 export {
   createResult,
