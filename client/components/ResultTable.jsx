@@ -110,7 +110,14 @@ const ResultTable = ({ data }) => {
             </tr>
             <tr>
               <td>NUMBER OF PEOPLE IN CLASS: {data.numberInClass}</td>
-              <td>PASS/FAIL:{data?.averageScore >= 40 ? 'PASS' : 'FAILED'}</td>
+              <td>
+                {data._id === '68395aa1e14bba4ff13cb031' ? (
+                  <>PASS/FAIL: REPEAT</>
+                ) : (
+                  <>PASS/FAIL:{data?.averageScore >= 40 ? 'PASS' : 'FAILED'}</>
+                )}
+              </td>
+              <td></td>
               <td>CONDUCT: Satisfactory</td>
               <td>
                 SIGNATURE:{' '}
