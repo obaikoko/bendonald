@@ -187,7 +187,9 @@ const getStudentProfile = asyncHandler(async (req, res) => {
     });
   }
 });
-
+// @desc Get all student(one student multiple results) results
+// @route GET /students/results
+// @privacy Private 
 const getStudentResults = asyncHandler(async (req, res) => {
   const results = await Result.find({ studentId: req.student._id }).sort({
     createdAt: -1,
@@ -496,6 +498,7 @@ const resetPassword = asyncHandler(async (req, res) => {
   res.json('Password has been reset successfully');
 });
 
+
 const graduateStudent = asyncHandler(async (req, res) => {
   // Step 1: Define the class progression map
   const classProgression = {
@@ -531,9 +534,9 @@ const graduateStudent = asyncHandler(async (req, res) => {
 
 export {
   authStudent,
+  RegisterStudent,
   getAllStudents,
   getStudent,
-  RegisterStudent,
   updateStudent,
   deleteStudent,
   forgetPassword,

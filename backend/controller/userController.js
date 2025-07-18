@@ -193,9 +193,12 @@ const updateUser = asyncHandler(async (req, res) => {
   }
 });
 
+
+// @desc Send mail to single parent/sponsor
+// @route POST /users/mails
+// @privacy Privaten Admin
 const sendMails = asyncHandler(async (req, res) => {
   const { subject, text } = req.body;
-  sendSingleMail;
   if (!req.user.isAdmin) {
     res.status(401);
     throw new Error('Unauthorized Contact the adminitration');
