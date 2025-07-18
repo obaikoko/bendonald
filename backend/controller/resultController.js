@@ -170,10 +170,10 @@ const getResult = asyncHandler(async (req, res) => {
       throw new Error('Unauthorized Access!');
     }
 
-    if (!result.isPaid) {
-      res.status(401);
-      throw new Error('Unable to access result, Please contact the admin');
-    }
+    // if (!result.isPaid) {
+    //   res.status(401);
+    //   throw new Error('Unable to access result, Please contact the admin');
+    // }
   }
 
   // If a teacher (user) is making the request, allow access regardless of isPaid
